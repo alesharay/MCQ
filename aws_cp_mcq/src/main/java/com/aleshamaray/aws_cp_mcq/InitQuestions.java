@@ -114,8 +114,8 @@ public class InitQuestions {
     questions.add(new Question(Constants.MULTI_ANSWER, q9, q9Options, "BC", q9Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q10 = """
-      A user is comparing purchase options for an application that runs on Amazon EC2 and Amazon RDS. The application cannot sustain any interruption. The application experiences a predictable amount of usage, including some seasonal spikes that last only a few weeks at a time. It is not possible to modify the application.
-      Which purchase option meets these requirements MOST cost-effectively? """;
+        A user is comparing purchase options for an application that runs on Amazon EC2 and Amazon RDS. The application cannot sustain any interruption. The application experiences a predictable amount of usage including some seasonal spikes that last only a few weeks at a time. It is not possible to modify the application.
+        Which purchase option meets these requirements MOST cost-effectively? """;
     String q10Options = """
         \tA. 
         \tB. 

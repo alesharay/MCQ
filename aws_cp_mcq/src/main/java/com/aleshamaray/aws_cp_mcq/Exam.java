@@ -69,7 +69,7 @@ public class Exam {
     }
 
     float percentScore = score == 0 ? 0 : (((float)score / (float)questions.size()) * 100);
-    System.out.printf("%s%sFinal Score%s%s: %d/%d - %s%s%d%%%s%s\n", ANSI_BOLD, ANSI_PURPLE, ANSI_UNBOLD, ANSI_RESET,
+    System.out.printf("%s%s\n\nFinal Score%s%s: %d/%d - %s%s%d%%%s%s\n", ANSI_BOLD, ANSI_PURPLE, ANSI_UNBOLD, ANSI_RESET,
         score, questions.size(), ANSI_PURPLE, ANSI_BOLD, (int)percentScore, ANSI_RESET, ANSI_UNBOLD);
     out.write(String.format("\n\nFinal Score: %d/%d - %d%%\n", score, questions.size(), (int)percentScore));
 
@@ -78,7 +78,7 @@ public class Exam {
   }
 
   public static BufferedWriter createFileWriter() throws IOException {
-    File file = new File("results.txt");
+    File file = new File("../aws-results.txt");
     if (file.createNewFile()) { System.out.println("File created: " + file.getName()); }
     return new BufferedWriter(new FileWriter(file));
   }

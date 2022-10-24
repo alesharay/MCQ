@@ -1,6 +1,7 @@
 package com.aleshamaray.terraform_associate_mcq;
 
-import static com.aleshamaray.terraform_associate_mcq.Constants.Colors.*; 
+
+
 import com.aleshamaray.terraform_associate_mcq.Constants.Constants;
 
 import java.io.BufferedReader;
@@ -11,6 +12,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.List;
+
+import static com.aleshamaray.terraform_associate_mcq.Constants.Colors.*;
 
 
 public class Exam {

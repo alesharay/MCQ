@@ -1,4 +1,4 @@
-package com.aleshamaray.aws_cp_mcq;
+package com.aleshamaray.aws_cp_mcq.Constants;
 
 public final class Colors {
   public static final String ANSI_GREEN = "\u001B[32m";

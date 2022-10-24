@@ -74,7 +74,7 @@ public class App
     float percentScore = score == 0 ? 0 : (((float)score / (float)questions.size()) * 100);
     System.out.printf("%s%sFinal Score%s%s: %d/%d - %s%s%d%%%s%s\n", ANSI_BOLD, ANSI_PURPLE, ANSI_UNBOLD, ANSI_RESET,
         score, questions.size(), ANSI_PURPLE, ANSI_BOLD, (int)percentScore, ANSI_RESET, ANSI_UNBOLD);
-    out.write(String.format("Final Score: %d/%d - %d%%\n", score, questions.size(), (int)percentScore));
+    out.write(String.format("\n\nFinal Score: %d/%d - %d%%\n", score, questions.size(), (int)percentScore));
 
     in.close();
     out.close();

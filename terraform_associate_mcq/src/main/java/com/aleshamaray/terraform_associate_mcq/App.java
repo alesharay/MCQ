@@ -1,5 +1,7 @@
 package com.aleshamaray.terraform_associate_mcq;
 
+import static com.aleshamaray.terraform_associate_mcq.Constants.Colors.*;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -9,7 +11,7 @@ import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.List;
 
-import static com.aleshamaray.terraform_associate_mcq.Colors.*;
+import com.aleshamaray.terraform_associate_mcq.Constants.Constants;
 
 public class App
 {
@@ -48,7 +50,7 @@ public class App
 
       if (response.equalsIgnoreCase("q")) { break; }
 
-      if (question.getType().equals("Multiple Answer")) {
+      if (question.getType().equals(Constants.MULTI_ANSWER)) {
         response = response.chars()
         .sorted()
         .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)

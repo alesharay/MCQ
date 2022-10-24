@@ -91,6 +91,39 @@ public class InitQuestions {
     String q7Explanation = "Reference: https://aws.amazon.com/lambda/features/ ";
     questions.add(new Question(Constants.MULTI_ANSWER, q7, q7Options, "AD", q7Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
+    String q8 = """
+      Which AWS services or features provide disaster recovery solutions for Amazon EC2 instances? [Choose Two] """;
+    String q8Options = """
+        \tA. EC2 Reserved Instances
+        \tB. EC2 Amazon Machine Images (AMIs)
+        \tC. Amazon Elastic Block Store (Amazon EBS) snapshots
+        \tD. AWS Shield 
+        \tE. Amazon GuardDuty """;
+    String q8Explanation = "Reference: https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud";
+    questions.add(new Question(Constants.MULTI_ANSWER, q8, q8Options, "BC", q8Explanation));
+// ----------------------------------------------------------------------------------------------------------------------
+    String q9 = """
+      A company is migrating to the AWS Cloud instead of running its infrastructure on premises.
+      Which of the following are advantages of this migration? [Choose Two] """;
+    String q9Options = """
+        \tA. Elimination of the need to perform security auditing
+        \tB. Increased global reach and agility
+        \tC. Ability to deploy globally in minutes
+        \tD. Redundancy by default for all compute services """;
+    String q9Explanation = "Reference: https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing ";
+    questions.add(new Question(Constants.MULTI_ANSWER, q9, q9Options, "BC", q9Explanation));
+// ----------------------------------------------------------------------------------------------------------------------
+    String q10 = """
+      A user is comparing purchase options for an application that runs on Amazon EC2 and Amazon RDS. The application cannot sustain any interruption. The application experiences a predictable amount of usage, including some seasonal spikes that last only a few weeks at a time. It is not possible to modify the application.
+      Which purchase option meets these requirements MOST cost-effectively? """;
+    String q10Options = """
+        \tA. 
+        \tB. 
+        \tC. 
+        \tD. """;
+    String q10Explanation = "Reference: ";
+    questions.add(new Question(Constants.MULTI_CHOICE, q10, q10Options, "", q10Explanation));
+// ----------------------------------------------------------------------------------------------------------------------
     // String q3 = """
     //   """;
     // String q3Options = """

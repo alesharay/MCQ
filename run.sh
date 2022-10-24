@@ -2,17 +2,35 @@
 
 # script was required because make doesn't 'cleanly' allow the resetting of variables from other variables
 
+RED='\033[0;31m'
+BRED='\033[1;31m'
+#---
+YELLOW='\033[0;33m'
+BYELLOW='\033[1;33m'
+#---
+GREEN='\033[0;32m'
+BGREEN='\033[1;32m'
+#---
+BLUE='\033[0;36m'
+BBLUE='\033[1;36m'
+#---
+BOLD='\033[1m'
+#---
+RESET='\033[0m'
+BRESET='\033[1m'
+
+
+
 if [ -z $1 ]; then 
-read -p "
-AVAILABLE QUZZES:
+read -p $'
+\e[36mAVAILABLE QUZZES:\e[0m
   A. AWS Certified Cloud Practitioner (CLF-C01)
   B. HashiCorp: Terraform Associate (002)
-
-OPTIONS
+\e[36mOPTIONS\e[0m
   H. Help
   Q. Quit
 
-Please make a selection: " RESPONSE 
+\e[36mPlease make a selection: \e[0m' RESPONSE 
 
 ANSWER=$(echo $RESPONSE | tr '[:lower:]' '[:upper:]')
 else
@@ -22,17 +40,17 @@ fi
 echo
 case $ANSWER in
   A|AWS)
-    clear ; echo "Chosen Quiz: AWS Certified Cloud Practitioner (CLF-C01)"
+    clear ; echo -e "Chosen Quiz: ${BYELLOW}AWS Certified Cloud Practitioner (CLF-C01)${RESET}"
     make generating AWS
     echo ; echo
-    echo results file created at aws-results.text
+    echo -e "Results file created at ${BGREEN}aws-results.txt${RESET}"
     echo
     ;;
   B|TERRAFORM)
-    clear ; echo "Chosen Quiz: HashiCorp: Terraform Associate (002)"
+    clear ; echo -e "Chosen Quiz: ${BYELLOW}HashiCorp: Terraform Associate (002)${RESET}"
     make generating TERRAFORM
     echo ; echo
-    echo results file created at terraform-results.text
+    echo -e "Results file created at ${BGREEN}terraform-results.txt${RESET}"
     echo
     ;;
   H|HELP)
@@ -41,7 +59,7 @@ case $ANSWER in
     echo
     ;;
   Q|Quit)
-    echo "Goodbye!"
+    echo -e ${BRED}"Goodbye!"${RESET}
     echo
     ;;
   *)

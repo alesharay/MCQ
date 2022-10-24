@@ -54,12 +54,12 @@ public class Exam {
 
       if (response.equalsIgnoreCase(question.getAnswer())) {
         score++;
-        System.out.printf("%s%sCorrect!%s%s\n", ANSI_BOLD, ANSI_GREEN, ANSI_RESET, ANSI_UNBOLD);
-        out.write(String.format("Correct!\n"));
+        System.out.printf("%s%s\nCorrect!%s%s\n", ANSI_BOLD, ANSI_GREEN, ANSI_RESET, ANSI_UNBOLD);
+        out.write(String.format("\nCorrect!\n"));
       } else {
-        System.out.printf("%s%sIncorrect!%s%s Correct answer is %s%s%s\n", ANSI_BOLD, ANSI_RED, ANSI_RESET, ANSI_UNBOLD,
+        System.out.printf("%s%s\nIncorrect!%s%s Correct answer is %s%s%s\n", ANSI_BOLD, ANSI_RED, ANSI_RESET, ANSI_UNBOLD,
             ANSI_GREEN, question.getAnswer(), ANSI_RESET);
-        out.write(String.format("Incorrect! Correct answer is %s\n", question.getAnswer()));
+        out.write(String.format("\nIncorrect! Correct answer is %s\n", question.getAnswer()));
       }
 
       System.out.println(question.getAnswerExplanation() + "\n");

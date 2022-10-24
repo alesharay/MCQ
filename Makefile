@@ -2,6 +2,12 @@
 .ONESHELL:
 .DEFAULT_GOAL=usage
 
+RED 		:= \033[31m
+YELLOW	:= \033[33m
+BLUE		:= \033[36m
+BOLD 		:= \033[1m
+RESET 	:= \033[0m
+
 
 generating:
 
@@ -25,7 +31,7 @@ B  TERRAFORM: ## Start the HashiCorp: Terraform Associate Quiz
 u usage: # Show usage message
 
 	@echo
-	@echo usage: ./build [OPTION]
+	@echo usage: ./build [OPTION] | awk -F: '{printf "${RED}${BOLD}%s${RESET} %s\n", $$1, $$2}'
 	@echo
 	@echo
 	@echo AVAILABLE QUIZZES:
@@ -71,10 +77,10 @@ dr install-docker-rhel: config-rhel #- Install Docker on RedHat Linux
 	@sudo systemctl start docker
 
 quizzes: # List all available quizzes
-	@egrep -h '\s##\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-25s\033[0m %s\n", $$1, $$2}'
+	@egrep -h '\s##\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "${BLUE}%-25s${RESET} %s\n", $$1, $$2}'
 
 c config-menu: # List config options
-	@egrep -h '\s#-\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?#- "}; {printf "\033[36m%-25s\033[0m %s\n", $$1, $$2}'
+	@egrep -h '\s#-\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?#- "}; {printf "${BLUE}%-25s${RESET} %s\n", $$1, $$2}'
 
 help: # Show the help (OPTIONS) menu
-	@egrep -h '\s#\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?# "}; {printf "\033[36m%-25s\033[0m %s\n", $$1, $$2}'
+	@egrep -h '\s#\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?# "}; {printf "${BLUE}%-25s${RESET} %s\n", $$1, $$2}'

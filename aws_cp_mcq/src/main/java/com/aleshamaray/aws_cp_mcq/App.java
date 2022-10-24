@@ -1,5 +1,7 @@
 package com.aleshamaray.aws_cp_mcq;
 
+import static com.aleshamaray.aws_cp_mcq.Constants.Colors.*;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -8,8 +10,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.List;
-
-import static com.aleshamaray.aws_cp_mcq.Colors.*;
 
 public class App
 {

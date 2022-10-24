@@ -5,6 +5,8 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.aleshamaray.aws_cp_mcq.Constants.Constants;
+
 // TODO: Use a database for this info
 @Data
 public class InitQuestions {
@@ -24,7 +26,7 @@ public class InitQuestions {
         \tC. Elastic Load Balancing
         \tD. Amazon Cloud Front """;
     String q1Explanation = "Reference: https://aws.amazon.com/cloudfront/ ";
-    questions.add(new Question("Multiple Choice", q1, q1Options, "D", q1Explanation));
+    questions.add(new Question(Constants.MULTI_CHOICE, q1, q1Options, "D", q1Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q2 = """
         Which pillar of AWS Well-Architected Framework referfs to the ability of a system to recover from infrastructure or service disruptions and dynamically acquire computing resources to meet demand? """;
@@ -34,7 +36,7 @@ public class InitQuestions {
         \tC. Performance Efficiency
         \tD. Cost Optimization """;
     String q2Explanation = "Reference: https://aws.amazon.com/architecture/well-architected/ ";
-    questions.add(new Question("Multiple Choice", q2, q2Options, "B", q2Explanation));
+    questions.add(new Question(Constants.MULTI_CHOICE, q2, q2Options, "B", q2Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q3 = "Which of the following are benefits to migrating to AWS Cloud? [Choose Two]";
     String q3Options = """
@@ -44,7 +46,7 @@ public class InitQuestions {
         \tD. Business excellence 
         \tE. Increased staff retention """;
     String q3Explanation = "Reference: https://www.easydeploy.io/blog/benefits-of-aws-migration/ ";
-    questions.add(new Question("Multiple Answer", q3, q3Options, "AC", q3Explanation));
+    questions.add(new Question(Constants.MULTI_ANSWER, q3, q3Options, "AC", q3Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q4 = """
       A company is planning to replace its physical on-premises compute servers with AWS serverless compute services. The company wants to be able to take advantage of advanced technologies quickly after the migration.
@@ -55,7 +57,7 @@ public class InitQuestions {
         \tC. Operational excellence
         \tD. Reliability """;
     String q4Explanation = "Reference: https://aws.amazon.com/architecture/well-architected/ ";
-    questions.add(new Question("Multiple Choice", q4, q4Options, "B", q4Explanation));
+    questions.add(new Question(Constants.MULTI_CHOICE, q4, q4Options, "B", q4Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q5 = """
       A large company has multiple departments. Each department has its own AWS account. Each department has purchased Amazon EC2 Reserved Instances. Some departments do not use all the Reserved Instances that they purchased, and other departments need more Reserved Instances than they purchased. The company needs to manage the AWS accounts for all the departments so that the departments can share the Reserved Instances.
@@ -66,7 +68,7 @@ public class InitQuestions {
         \tC. AWS Trusted Advisor
         \tD. AWS Organizations """;
     String q5Explanation = "Reference: https://aws.amazon.com/organizations/ ";
-    questions.add(new Question("Multiple Choice", q5, q5Options, "D", q5Explanation));
+    questions.add(new Question(Constants.MULTI_CHOICE, q5, q5Options, "D", q5Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q6 = """
       Which component of the AWS global infrastructure is made up of one or more discrete data centers that have redundant power, networking, and connectivity? """;
@@ -76,7 +78,7 @@ public class InitQuestions {
         \tC. Edge Locations
         \tD. AWS Outposts """;
     String q6Explanation = "Reference: https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure ";
-    questions.add(new Question("Multiple Choice", q6, q6Options, "B", q6Explanation));
+    questions.add(new Question(Constants.MULTI_CHOICE, q6, q6Options, "B", q6Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q7 = """
       Which duties are the responsibility of a company that is using AWS Lambda? (Choose two.) """;
@@ -85,9 +87,9 @@ public class InitQuestions {
         \tB. Selection of CPU resources
         \tC. Patching of operating system
         \tD. Writing and updating code
-        \tE. """;
-    String q7Explanation = "Reference: ";
-    questions.add(new Question("Multiple Choice", q7, q7Options, "", q7Explanation));
+        \tE. Security of underlying infrastructure """;
+    String q7Explanation = "Reference: https://aws.amazon.com/lambda/features/ ";
+    questions.add(new Question(Constants.MULTI_ANSWER, q7, q7Options, "AD", q7Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     // String q3 = """
     //   """;
@@ -98,7 +100,7 @@ public class InitQuestions {
     //     \tD. """;
     // String q3Options = "\tA. True\n\tB. False";
     // String q3Explanation = "Reference: ";
-    // questions.add(new Question("Multiple Choice", q3, q3Options, "", q3Explanation));
+    // questions.add(new Question(Constants.MULTI_CHOICE, q3, q3Options, "", q3Explanation));
 // // ----------------------------------------------------------------------------------------------------------------------
 
   }

@@ -1,6 +1,7 @@
-package com.aleshamaray.aws_cp_mcq;
+package com.aleshamaray.terraform_associate_mcq;
 
-import static com.aleshamaray.aws_cp_mcq.Constants.Colors.*;
+import static com.aleshamaray.terraform_associate_mcq.Constants.Colors.*; 
+import com.aleshamaray.terraform_associate_mcq.Constants.Constants;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,11 +12,10 @@ import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.List;
 
-import lombok.*;
 
 public class Exam {
 
-  public static void run(List<Question> questions) throws IOException  {
+  public static void run(List<Question> questions) throws IOException {
     int score = 0;
     Collections.shuffle(questions);
     BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -44,7 +44,7 @@ public class Exam {
 
       if (response.equalsIgnoreCase("q")) { break; }
 
-      if (question.getType().equals("Multiple Answer")) {
+      if (question.getType().equals(Constants.MULTI_ANSWER)) {
         response = response.chars()
         .sorted()
         .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)

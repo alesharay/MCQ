@@ -18,18 +18,18 @@ public class InitQuestions {
     questions = new ArrayList<>();
 
     String q1 = "The terraform.tfstate file always matches your currently built infrastructure";
-    String q1Options = "\tA. True\n\tB. False";
+    String q1Options = "\tT. True\n\tF. False";
     String q1Explanation = """
         Explanation: The terraform.tfstate file can be updated and the infrastructure will be updated based on the update
         Reference: https://developer.hashicorp.com/terraform/language/state """;
-    questions.add(new Question(Constants.TRUE_FALSE, q1, q1Options, "B", q1Explanation));
+    questions.add(new Question(Constants.TRUE_FALSE, q1, q1Options, "F", q1Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q2 = "One remote backend configuration always maps to a single remote workspace";
-    String q2Options = "\tA. True\n\tB. False";
+    String q2Options = "\tT. True\n\tF. False";
     String q2Explanation = """
         Explanation: The remote backend can work with either a single remote Terraform Cloud workspace or with multiple similarly-named remote workspaces
         Reference: https://developer.hashicorp.com/terraform/language/settings/backends/remote """;
-    questions.add(new Question(Constants.TRUE_FALSE, q2, q2Options, "B", q2Explanation));
+    questions.add(new Question(Constants.TRUE_FALSE, q2, q2Options, "F", q2Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q3 = "How is the Terraform remote backend different from other state backends such as S3, Consul, Etc";
     String q3Options = """
@@ -55,9 +55,9 @@ public class InitQuestions {
           provider "provider_name" {
             ...
           }""";
-    String q5Options = "\tA. True\n\tB. False";
+    String q5Options = "\tT. True\n\tF. False";
     String q5Explanation = "Reference: https://developer.hashicorp.com/terraform/language/providers/configuration ";
-    questions.add(new Question(Constants.TRUE_FALSE, q5, q5Options, "A", q5Explanation));
+    questions.add(new Question(Constants.TRUE_FALSE, q5, q5Options, "T", q5Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q6 = """
         You run a local-exec provisioner in a null resource called null_resource.run_script and realize that you need to rerun the script.
@@ -119,9 +119,9 @@ public class InitQuestions {
     questions.add(new Question(Constants.MULTI_CHOICE, q11, q11Options, "B", q11Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q12 = "Terraform variables and outputs that set the \"description\" argument will store that description in the state file";
-    String q12Options = "\tA. True\n\tB. False";
+    String q12Options = "\tT. True\n\tF. False";
     String q12Explanation = " Reference: https://developer.hashicorp.com/terraform/language/values/variables#input-variable-documentation ";
-    questions.add(new Question(Constants.TRUE_FALSE, q12, q12Options, "B", q12Explanation));
+    questions.add(new Question(Constants.TRUE_FALSE, q12, q12Options, "F", q12Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q13 = """
         What is the provider for this fictitious resource?
@@ -165,16 +165,16 @@ public class InitQuestions {
     questions.add(new Question(Constants.MULTI_CHOICE, q16, q16Options, "D", q16Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q17 = "If a module uses local values, you can expose that value with a `terraform output`";
-    String q17Options = "\tA. True\n\tB. False";
+    String q17Options = "\tT. True\n\tF. False";
     String q17Explanation = """
         Reference: https://www.terraform.io/docs/language/values/local
         Reference: https://www.terraform.io/docs/language/values/outputs """;
-    questions.add(new Question(Constants.TRUE_FALSE, q17, q17Options, "A", q17Explanation));
+    questions.add(new Question(Constants.TRUE_FALSE, q17, q17Options, "T", q17Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q18 = "You should store secret data in the same version control repository as your Terraform configuration";
-    String q18Options = "\tA. True\n\tB. False";
+    String q18Options = "\tT. True\n\tF. False";
     String q18Explanation = " Reference: https://blog.gruntwork.io/a-comprehensive-guide-to-managing-secrets-in-your-terraform-code-1d586955ace1 ";
-    questions.add(new Question(Constants.TRUE_FALSE, q18, q18Options, "B", q18Explanation));
+    questions.add(new Question(Constants.TRUE_FALSE, q18, q18Options, "F", q18Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q19 = "Which of the following is not a valid string function in Terraform";
     String q19Options = """
@@ -213,9 +213,9 @@ public class InitQuestions {
     questions.add(new Question(Constants.MULTI_CHOICE, q21, q21Options, "D", q21Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q22 = "`terraform init` initializes a sample main.tf file in the current directory";
-    String q22Options = "\tA. True\n\tB. False";
+    String q22Options = "\tT. True\n\tF. False";
     String q22Explanation = " Reference: https://developer.hashicorp.com/terraform/cli/commands/init ";
-    questions.add(new Question(Constants.TRUE_FALSE, q22, q22Options, "B", q22Explanation));
+    questions.add(new Question(Constants.TRUE_FALSE, q22, q22Options, "F", q22Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q23 = "Which two steps are required to provision new infrastructure in the Terraform workflow? [Choose Two]";
     String q23Options = """
@@ -237,9 +237,9 @@ public class InitQuestions {
     questions.add(new Question(Constants.MULTI_CHOICE, q24, q24Options, "B", q24Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q25 = "Terraform requires the Go runtime as a prerequisite for installation";
-    String q25Options = "\tA. True\n\tB. False";
+    String q25Options = "\tT. True\n\tF. False";
     String q25Explanation = " Reference: https://www.terraform.io/docs/extend/guides/v1-upgrade-guide ";
-    questions.add(new Question(Constants.TRUE_FALSE, q25, q25Options, "B", q25Explanation));
+    questions.add(new Question(Constants.TRUE_FALSE, q25, q25Options, "F", q25Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q26 = "When should you use the force-unlock command?";
     String q26Options = """
@@ -269,9 +269,9 @@ public class InitQuestions {
     questions.add(new Question(Constants.MULTI_CHOICE, q28, q28Options, "A", q28Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q29 = "`terraform validate` validates the syntax of Terraform files.";
-    String q29Options = "\tA. True\n\tB. False";
+    String q29Options = "\tT. True\n\tF. False";
     String q29Explanation = " Reference: https://developer.hashicorp.com/terraform/cli/commands/validate ";
-    questions.add(new Question(Constants.TRUE_FALSE, q29, q29Options, "A", q29Explanation));
+    questions.add(new Question(Constants.TRUE_FALSE, q29, q29Options, "T", q29Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q30 = """
         You have used Terraform to create an ephemeral development environment in the cloud and are now ready to destroy all of the infrastructure described by your Terraform configuration.
@@ -295,14 +295,14 @@ public class InitQuestions {
     questions.add(new Question(Constants.MULTI_CHOICE, q31, q31Options, "A", q31Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q32 = "A Terraform provisioner must be nested inside of a resource configuration block.";
-    String q32Options = "\tA. True\n\tB. False";
+    String q32Options = "\tT. True\n\tF. False";
     String q32Explanation = " Reference: https://www.terraform.io/docs/language/resources/provisioners/connection ";
-    questions.add(new Question(Constants.TRUE_FALSE, q32, q32Options, "A", q32Explanation));
+    questions.add(new Question(Constants.TRUE_FALSE, q32, q32Options, "T", q32Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q33 = "Terraform can run on Windows or Linux, but it requires a Server version of the Windows operating system";
-    String q33Options = "\tA. True\n\tB. False";
+    String q33Options = "\tT. True\n\tF. False";
     String q33Explanation = " Reference: https://learn.hashicorp.com/tutorials/terraform/install-cli ";
-    questions.add(new Question(Constants.TRUE_FALSE, q33, q33Options, "B", q33Explanation));
+    questions.add(new Question(Constants.TRUE_FALSE, q33, q33Options, "T", q33Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q34 = "What does the default \"local\" Terraform backend store?";
     String q34Options = """
@@ -421,10 +421,10 @@ public class InitQuestions {
     questions.add(new Question(Constants.MULTI_CHOICE, q44, q44Options, "C", q44Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q45 = "Only the user that generated a plan may apply it.";
-    String q45Options = "\tA. True\n\tB. False";
+    String q45Options = "\tT. True\n\tF. False";
     String q45Explanation = """
       Reference: https://developer.hashicorp.com/terraform/cli/commands/plan """;
-    questions.add(new Question(Constants.TRUE_FALSE, q45, q45Options, "B", q45Explanation));
+    questions.add(new Question(Constants.TRUE_FALSE, q45, q45Options, "F", q45Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q46 = """
       You need to specify a dependency manually.

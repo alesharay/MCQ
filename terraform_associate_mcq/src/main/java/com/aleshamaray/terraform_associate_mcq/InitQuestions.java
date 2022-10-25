@@ -246,7 +246,7 @@ public class InitQuestions {
         \tA. You see a status message that you cannot acquire the lock
         \tB. You have a high priority change
         \tC. Automatic unlocking failed
-        \tD. You apply failed due to a state lock""";
+        \tD. Your apply failed due to a state lock""";
     String q26Explanation = " Reference: https://www.terraform.io/docs/cli/commands/force-unlock ";
     questions.add(new Question(Constants.MULTI_CHOICE, q26, q26Options, "C", q26Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
@@ -314,7 +314,7 @@ public class InitQuestions {
     questions.add(new Question(Constants.MULTI_CHOICE, q34, q34Options, "D", q34Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
     String q35 = """
-        You have multiple team members collaborating on Infrastructure as Code (IaC) using Terraform and want to apply formatting standars for readability.
+        You have multiple team members collaborating on Infrastructure as Code (IaC) using Terraform and want to apply formatting standards for readability.
         How can you format Terraform HashiCorp Configuration Language (HCL) according to standard Terraform style convention? """;
     String q35Options = """
         \tA. Run the `terraform fmt` command during the code linting phase of your CI/CD process
@@ -375,7 +375,7 @@ public class InitQuestions {
       \tA. Modules stored on the public Terraform Module Registry do not support versioning
       \tB. Append ?ref=v1.0.0 argument to the source path
       \tC. Add version = \"1.0.0\" attribute to module block
-      \tD. A web-based user interface (UI) """;
+      \tD. Nothing, modules stored on the public Terraform Module Registry always default to version 1.0.0 """;
     String q40Explanation = " Reference: https://www.terraform.io/docs/language/modules/sources ";
     questions.add(new Question(Constants.MULTI_CHOICE, q40, q40Options, "C", q40Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
@@ -384,7 +384,7 @@ public class InitQuestions {
       \tA. Automated infrastructure deployment visualization
       \tB. Automatic backups
       \tC. Remote state storage
-      \tD. Nothing, modules stored on the public Terraform Module Registry always default to version 1.0.0 """;
+      \tD. A web-based user interface (UI) """;
     String q41Explanation = """
       Reference: https://www.terraform.io/docs/enterprise/admin/automated-recovery 
       Reference: https://www.terraform.io/docs/language/state/remote """;
@@ -400,7 +400,7 @@ public class InitQuestions {
       Reference: https://www.terraform.io/docs/language/settings/backends/local """;
     questions.add(new Question(Constants.MULTI_CHOICE, q42, q42Options, "C", q42Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
-    String q43 = "Which option can not be used to keep secrets out of Terraform configuration files?";
+    String q43 = "Which option cannot be used to keep secrets out of Terraform configuration files?";
     String q43Options = """
       \tA. A Terraform provider
       \tB. Environment variables
@@ -428,7 +428,7 @@ public class InitQuestions {
 // ----------------------------------------------------------------------------------------------------------------------
     String q46 = """
       You need to specify a dependency manually.
-      What resource meta-parameter can you use to make sure Terraform respects the dependency?
+      What resource meta-parameter can you use to make sure Terraform respects the dependency? [fill in the blank]
     """;
     String q46Options = " ";
     String q46Explanation = """

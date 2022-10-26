@@ -28,6 +28,11 @@ B  TERRAFORM: ## Start the HashiCorp: Terraform Associate Quiz
 	@. terraform_associate_mcq/quiz.sh
 	@exit 0
 
+C  AZURE: ## Start the HashiCorp: Azure Fundamentals Quiz
+
+	@. azure_fundamentals_mcq/quiz.sh
+	@exit 0
+
 u usage: # Show usage message
 
 	@echo

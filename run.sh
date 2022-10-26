@@ -26,6 +26,7 @@ read -p $'
 \e[36mAVAILABLE QUZZES:\e[0m
   A. AWS Certified Cloud Practitioner (CLF-C01)
   B. HashiCorp: Terraform Associate (002)
+  C. Microsoft Certified: Azure Fundamentals (AZ-900)
 \e[36mOPTIONS\e[0m
   H. Help
   Q. Quit
@@ -51,6 +52,13 @@ case $ANSWER in
     make generating TERRAFORM
     echo ; echo
     echo -e "Results file created at ${BGREEN}terraform-results.txt${RESET}"
+    echo
+    ;;
+  C|AZURE)
+    clear ; echo -e "Chosen Quiz: ${BYELLOW}Microsoft Certified: Azure Fundamentals (AZ-900)${RESET}"
+    make generating AZURE
+    echo ; echo
+    echo -e "Results file created at ${BGREEN}azure-results.txt${RESET}"
     echo
     ;;
   H|HELP)

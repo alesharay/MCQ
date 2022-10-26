@@ -386,7 +386,7 @@ public class InitQuestions {
       \tC. Remote state storage
       \tD. A web-based user interface (UI) """;
     String q41Explanation = """
-      Reference: https://www.terraform.io/docs/enterprise/admin/automated-recovery 
+      Reference: https://www.terraform.io/docs/enterprise/admin/automated-recovery
       Reference: https://www.terraform.io/docs/language/state/remote """;
     questions.add(new Question(Constants.MULTI_ANSWER, q41, q41Options, "CD", q41Explanation));
 // ----------------------------------------------------------------------------------------------------------------------

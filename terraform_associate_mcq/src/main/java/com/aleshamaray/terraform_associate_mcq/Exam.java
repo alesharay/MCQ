@@ -26,6 +26,10 @@ public class Exam {
 
     System.out.println();
     int index = 1;
+    
+    System.out.printf("%s%d Questions Total%s\n\n", ANSI_YELLOW, questions.size(), ANSI_RESET);
+    out.write(String.format("\n%d Questions Total\n\n ", questions.size()));
+
     for (Question question : questions) {
 
       System.out.printf("%s%s", ANSI_BLUE, ANSI_BOLD);
@@ -70,10 +74,10 @@ public class Exam {
       index++;
     }
 
-    float percentScore = score == 0 ? 0 : (((float)score / (float)questions.size()) * 100);
-    System.out.printf("%s%s\n\nFinal Score%s%s: %d/%d - %s%s%d%%%s%s\n", ANSI_BOLD, ANSI_PURPLE, ANSI_UNBOLD, ANSI_RESET,
-        score, questions.size(), ANSI_PURPLE, ANSI_BOLD, (int)percentScore, ANSI_RESET, ANSI_UNBOLD);
-    out.write(String.format("\n\nFinal Score: %d/%d - %d%%\n", score, questions.size(), (int)percentScore));
+    float percentScore = score == 0 ? 0 : (((float)score / (float)(index-1)) * 100);
+    System.out.printf("%s%s\n\nFinal Score%s%s: %d correct / %d answered - %s%s%d%%%s%s\n", ANSI_BOLD, ANSI_PURPLE, ANSI_UNBOLD, ANSI_RESET,
+        score, index-1, ANSI_PURPLE, ANSI_BOLD, (int)percentScore, ANSI_RESET, ANSI_UNBOLD);
+    out.write(String.format("\n\nFinal Score: %d correct / %d answered - %d%%\n", score, index-1, (int)percentScore));
 
     in.close();
     out.close();

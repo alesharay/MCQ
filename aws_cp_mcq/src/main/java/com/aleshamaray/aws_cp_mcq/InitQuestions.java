@@ -43,7 +43,7 @@ public class InitQuestions {
         \tA. Operational resiliance
         \tB. Discounts for products on Amazon.com
         \tC. Business agility
-        \tD. Business excellence 
+        \tD. Business excellence
         \tE. Increased staff retention """;
     String q3Explanation = "Reference: https://www.easydeploy.io/blog/benefits-of-aws-migration/ ";
     questions.add(new Question(Constants.MULTI_ANSWER, q3, q3Options, "AC", q3Explanation));
@@ -97,7 +97,7 @@ public class InitQuestions {
         \tA. EC2 Reserved Instances
         \tB. EC2 Amazon Machine Images (AMIs)
         \tC. Amazon Elastic Block Store (Amazon EBS) snapshots
-        \tD. AWS Shield 
+        \tD. AWS Shield
         \tE. Amazon GuardDuty """;
     String q8Explanation = "Reference: https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud";
     questions.add(new Question(Constants.MULTI_ANSWER, q8, q8Options, "BC", q8Explanation));
@@ -117,21 +117,86 @@ public class InitQuestions {
         A user is comparing purchase options for an application that runs on Amazon EC2 and Amazon RDS. The application cannot sustain any interruption. The application experiences a predictable amount of usage including some seasonal spikes that last only a few weeks at a time. It is not possible to modify the application.
         Which purchase option meets these requirements MOST cost-effectively? """;
     String q10Options = """
-        \tA. 
-        \tB. 
-        \tC. 
-        \tD. """;
-    String q10Explanation = "Reference: ";
-    questions.add(new Question(Constants.MULTI_CHOICE, q10, q10Options, "", q10Explanation));
+        \tA. Review the AWS Marketplace and buy Partial Upfront Reserved Instances to cover the predicted and seasonal load.
+        \tB. Buy Reserved Instances for the predicted amount of usage throughout the year. Allow any seasonal usage to run on Spot Instances.
+        \tC. Buy Reserved Instances for the predicted amount of usage throughout the year. Allow any seasonal usage to run at an On-Demand rate.
+        \tD. Buy Reserved Instances to cover all potential usage that results from the seasonal usage. """;
+    String q10Explanation = "Reference: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances ";
+    questions.add(new Question(Constants.MULTI_CHOICE, q10, q10Options, "C", q10Explanation));
 // ----------------------------------------------------------------------------------------------------------------------
+    String q11 = """
+      A company wants to review its monthly costs of using Amazon EC2 and Amazon RDS for the past year.
+      Which AWS service or tool provides this information? """;
+    String q11Options = """
+      \tA. AWS Trusted Advisor
+      \tB. Cost Explorer
+      \tC. Amazon Forecast
+      \tD. Amazon CloudWatch """;
+    String q11Explanation = "Reference: https://aws.amazon.com/aws-cost-management/aws-cost-explorer ";
+    questions.add(new Question(Constants.MULTI_CHOICE, q11, q11Options, "B", q11Explanation));
+// ----------------------------------------------------------------------------------------------------------------------
+    String q12 = """
+      A company wants to migrate a critical application to AWS. The application has a short runtime. The application is invoked by changes in data or by shifts in system state. The company need a compute solution that maximizes operational efficiency and minimizes the cost of running the application.
+      Which AWS solution should the company use to meet these requirements? """;
+    String q12Options = """
+        \tA. Amazon EC2 On-Demand Instances
+        \tB. AWS Lambda
+        \tC. Amazon EC2 Reserved Instances
+        \tD. Amazon EC2 Spot Instances """;
+    String q12Explanation = "Reference: https://aws.amazon.com/lambda/features/ ";
+    questions.add(new Question(Constants.MULTI_CHOICE, q12, q12Options, "B", q12Explanation));
+// ----------------------------------------------------------------------------------------------------------------------
+    String q13 = """
+      Which AWS service or feature allows users to connect with and deploy AWS services programmatically? """;
+    String q13Options = """
+        \tA. AWS Management Console
+        \tB. AWS Cloud9
+        \tC. AWS CodePipeline
+        \tD. AWS software development kits (SDKs) """;
+    String q13Explanation = "Reference: https://aws.amazon.com/developer/tools/ ";
+    questions.add(new Question(Constants.MULTI_CHOICE, q13, q13Options, "D", q13Explanation));
+// ----------------------------------------------------------------------------------------------------------------------
+    String q14 = """
+      A company plans to create a data lake that uses Amazon S3.
+      Which factor will have the MOST effect on cost? """;
+    String q14Options = """
+        \tA. The selection of S3 storage tiers
+        \tB. Charges to transfer existing data into Amazon S3
+        \tC. The addition of S3 bucket policies
+        \tD. S3 ingest fees for each request """;
+    String q14Explanation = "Reference: https://docs.aws.amazon.com/s3/index ";
+    questions.add(new Question(Constants.MULTI_CHOICE, q14, q14Options, "A", q14Explanation));
+// ----------------------------------------------------------------------------------------------------------------------
+    String q15 = """
+      A company is launching an ecommerce application that must always be available. The application will run on Amazon EC2 instances continuously for the next 12 months.
+      What is the MOST cost-effective instance purchasing option that meets these requirements? """;
+    String q15Options = """
+        \tA. Spot Instances
+        \tB. Savings Plans
+        \tC. Dedicated Hosts
+        \tD. On-Demand Instances """;
+    String q15Explanation = "Reference: https://aws.amazon.com/ec2/pricing/ ";
+    questions.add(new Question(Constants.MULTI_CHOICE, q15, q15Options, "B", q15Explanation));
+// ----------------------------------------------------------------------------------------------------------------------
+//     String q16 = """
+//       """;
+//     String q16Options = """
+//         \tA.
+//         \tB.
+//         \tC.
+//         \tD. """;
+//     String q16Options = "\tT. True\n\tF. False";
+//     String q16Explanation = "Reference: ";
+//     questions.add(new Question(Constants.MULTI_CHOICE, q16, q16Options, "", q16Explanation));
+// // ----------------------------------------------------------------------------------------------------------------------
     // String q3 = """
     //   """;
     // String q3Options = """
-    //     \tA. 
-    //     \tB. 
-    //     \tC. 
+    //     \tA.
+    //     \tB.
+    //     \tC.
     //     \tD. """;
-    // String q3Options = "\tA. True\n\tB. False";
+    // String q3Options = "\tT. True\n\tF. False";
     // String q3Explanation = "Reference: ";
     // questions.add(new Question(Constants.MULTI_CHOICE, q3, q3Options, "", q3Explanation));
 // // ----------------------------------------------------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# mongosh --username admin --password admin --authenticationDatabase=admin 
+# mongosh --username admin --password admin --authenticationDatabase=admin
 clear
 
 RESET='\033[0m'           # Text Reset
@@ -31,7 +31,7 @@ DOCUMENTS=`curl -s http://localhost:8102/questions/api/v1/`
 SIZE=`echo $DOCUMENTS |  jq length`
 
 
-function joinArray() { 
+function joinArray() {
   local result=`IFS="$1"; shift; echo "$*";`
   echo "$result"
 }
@@ -79,19 +79,22 @@ function getRandomNumber() {
 
 function getAllQuestions() {
 
-  clear ; echo -e "${YELLOW}$SIZE Questions Total${RESET}" ; echo 
+  echo -e "${YELLOW}$SIZE Questions Total${RESET}" ; echo
+  CORRECT=0
 
+  TOTAL=0
   while [[ $INDEX -ne $SIZE ]];
   do
     element=`getRandomNumber`
+    TOTAL=$(($INDEX+1))
 
-    echo -en "$(($INDEX+1)). " ; 
+    echo -en "$TOTAL. " ;
     echo "$DOCUMENTS" | \
       jq --argjson index $element '.[$index].question' | \
       sed 's/\\n/\n/g' | \
       sed 's/\"//g' | \
       awk -F\\n -v blue=${BLUE} -v reset=${RESET} '{ print blue$1 $2reset; }'
-    
+
     echo "$DOCUMENTS" | \
       jq --argjson index $element '.[$index].options' | \
       sed 's/\\n/\n/g' | \
@@ -100,7 +103,7 @@ function getAllQuestions() {
 
     echo
 
-    echo -ne "\n(examples: d | bcd | q) (q to quit)\nSelection (letter(s) only): " 
+    echo -ne "\n(examples: d | bcd | q) (q to quit)\nSelection (letter(s) only): "
     read -e SELECTION
     SELECTION=`echo $SELECTION | xargs | tr '[:lower:]' '[:upper:']`
 
@@ -111,8 +114,8 @@ function getAllQuestions() {
 
     if [[ "$SELECTION" == "Q" ]];
     then
-    echo -e "${BRED}Goodbye!${RESET}"
-    exit 0
+      echo -e "${BRED}Goodbye!${RESET}"
+      break
     fi
 
     echo
@@ -129,24 +132,30 @@ function getAllQuestions() {
     echo
 
     if [[ "$SELECTION" == "$ANSWER" ]]; then
+      CORRECT=$((CORRECT + 1))
       echo -e "${BGREEN}Correct!${RESET}"
     else
       echo -e "${BRED}Incorrect!${RESET} Correct answer is ${GREEN}$ANSWER${RESET}"
     fi
-    
+
 
     EXPLANATION=`echo "$DOCUMENTS" | jq --argjson index $element '.[$index].explanation' | sed 's/\"//g'`
     echo -e "$EXPLANATION"
 
     echo
 
-
-
     INDEX=$(($INDEX+1))
   done
 
-  # echo $QUESTIONS
 
+  if [[ $CORRECT -eq 0 ]]; then
+    percentScore=0
+  else
+      percentScore=`awk -v correct=$CORRECT -v total=$INDEX 'BEGIN{printf "%d",correct/total*100}'`
+    # percentScore=$(( CORRECT * INDEX / 100 ))
+  fi
+
+  echo -e "${BPURPLE}\n\nFinal Score${RESET}: $CORRECT correct / $INDEX answered - ${BPURPLE}$percentScore%${RESET}) "
 }
 
 # load_db

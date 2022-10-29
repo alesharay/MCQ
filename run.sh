@@ -27,6 +27,7 @@ read -p $'
   A. AWS Certified Cloud Practitioner (CLF-C01)
   B. HashiCorp: Terraform Associate (002)
   C. Microsoft Certified: Azure Fundamentals (AZ-900)
+  D. Template
 \e[36mOPTIONS\e[0m
   H. Help
   Q. Quit
@@ -59,6 +60,13 @@ case $ANSWER in
     make generating AZURE
     echo ; echo
     echo -e "Results file created at ${BGREEN}azure-results.txt${RESET}"
+    echo
+    ;;
+  D|Template)
+    clear ; echo -e "Chosen Quiz: ${BYELLOW}Microsoft Certified: Azure Fundamentals (AZ-900)${RESET}"
+    make generating TEMPLATE
+    echo ; echo
+    echo -e "Results file created at ${BGREEN}template-results.txt${RESET}"
     echo
     ;;
   H|HELP)

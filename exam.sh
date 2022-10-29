@@ -26,6 +26,9 @@ BCYAN='\033[1;36m'        # Cyan
 BWHITE='\033[1;37m'       # White
 
 
+INDEX="0"
+DOCUMENTS=`curl -s http://localhost:8102/questions/api/v1/`
+SIZE=`echo $DOCUMENTS |  jq length`
 
 
 function joinArray() { 
@@ -51,29 +54,46 @@ function load_db() {
   docker exec -it mongodb mongoimport --username admin --password admin --uri mongodb://@mongodb:27017/MCQ?authSource=admin --collection awsQuestions --drop --file mongo-seed/Question.json --jsonArray
 }
 
-INDEX="0"
-DOCUMENTS=`curl -s http://localhost:8102/questions/api/v1/`
-SIZE=`echo $DOCUMENTS |  jq length`
+
+function getNums() {
+  local nums=""
+  num=0
+  while [[ ${num} -lt ${SIZE} ]]
+  do
+    nums+=`echo "'$num '"`
+    num=$((num + 1))
+  done
+  echo "$nums"
+}
+
+
+LIST_OF_NUMS=`getNums`
+function getRandomNumber() {
+  numbers="$LIST_OF_NUMS"
+  local index=$(( $RANDOM % ${SIZE} ))
+  numbers=`echo $numbers | sed "s/\'$index\ '//"`
+  echo $index
+}
+
+
+
 function getAllQuestions() {
 
   clear ; echo -e "${YELLOW}$SIZE Questions Total${RESET}" ; echo 
 
-
-
-
-
   while [[ $INDEX -ne $SIZE ]];
   do
+    element=`getRandomNumber`
 
     echo -en "$(($INDEX+1)). " ; 
     echo "$DOCUMENTS" | \
-      jq --argjson index $INDEX '.[$index].question' | \
+      jq --argjson index $element '.[$index].question' | \
       sed 's/\\n/\n/g' | \
       sed 's/\"//g' | \
       awk -F\\n -v blue=${BLUE} -v reset=${RESET} '{ print blue$1 $2reset; }'
     
     echo "$DOCUMENTS" | \
-      jq --argjson index $INDEX '.[$index].options' | \
+      jq --argjson index $element '.[$index].options' | \
       sed 's/\\n/\n/g' | \
       sed 's/\"//g' | \
       sed 's/\\t/\t/g'
@@ -86,7 +106,7 @@ function getAllQuestions() {
 
     echo
 
-    ANSWER=`echo "$DOCUMENTS" | jq --argjson index $INDEX '.[$index].answer' | \
+    ANSWER=`echo "$DOCUMENTS" | jq --argjson index $element '.[$index].answer' | \
     sed 's/\"//g' | xargs`
 
     if [[ "$SELECTION" == "Q" ]];
@@ -97,7 +117,7 @@ function getAllQuestions() {
 
     echo
 
-    TYPE=`echo "$DOCUMENTS" | jq --argjson index $INDEX '.[$index].type' | \
+    TYPE=`echo "$DOCUMENTS" | jq --argjson index $element '.[$index].type' | \
     sed 's/\"//g' | xargs | tr ''[:lower:] '[:upper:]'`
 
     if [[ "$TYPE" == "MULTIPLE ANSWER" ]]; then
@@ -115,7 +135,7 @@ function getAllQuestions() {
     fi
     
 
-    EXPLANATION=`echo "$DOCUMENTS" | jq --argjson index $INDEX '.[$index].explanation' | sed 's/\"//g'`
+    EXPLANATION=`echo "$DOCUMENTS" | jq --argjson index $element '.[$index].explanation' | sed 's/\"//g'`
     echo -e "$EXPLANATION"
 
     echo

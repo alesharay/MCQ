@@ -1,0 +1,66 @@
+version: "3.3"
+services:
+  mongodb:
+    container_name: mongodb
+    volumes:
+      - "mongodb_data_container:/data/db"
+      - "./mongo-seed:/mongo-seed"
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    networks:
+      mcq:
+        ipv4_address: 172.16.0.1
+    command: mongod --bind_ip 127.0.0.1,172.16.0.1
+    image: mongo
+    env_file:
+      - .env
+  mongo-seed:
+    env_file:
+      - .env
+    build:
+      context: ./mongo-seed
+      dockerfile: Dockerfile
+      args:
+        - DATABASE_URI=$DATABASE_URI
+        - USERNAME=$MONGO_INITDB_ROOT_USERNAME
+        - PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+    networks:
+      mcq:
+    depends_on:
+      - mongodb
+    volumes:
+      - "./mongo-db:/data/db"
+  # quizzes:
+  #   privileged: true
+  #   network_mode: mcq_mcq
+  #   volumes:
+  #     - .:/app"
+  #   image: quizzes
+  #   networks:
+  #     mcq:
+  #   depends_on:
+  #     - mongodb
+  #   env_file:
+  #     - .env
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #     args:
+  #       - DATABASE_URI=$DATABASE_URI
+  #       - USERNAME=$MONGO_INITDB_ROOT_USERNAME
+  #       - PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+
+networks:
+  mcq:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.0.0/24
+          gateway: 172.16.0.254
+
+volumes:
+  mongodb_data_container:
+    external: false

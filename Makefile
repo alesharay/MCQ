@@ -33,6 +33,11 @@ C  AZURE: ## Start the HashiCorp: Azure Fundamentals Quiz
 	@. azure_fundamentals_mcq/quiz.sh
 	@exit 0
 
+D  TEMPLATE: ## Start the HashiCorp: Azure Fundamentals Quiz
+
+	@. quiz_template/quiz.sh
+	@exit 0
+
 u usage: # Show usage message
 
 	@echo

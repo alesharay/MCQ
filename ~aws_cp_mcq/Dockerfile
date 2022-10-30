@@ -1,11 +1,12 @@
 FROM ubuntu:20.04
 RUN apt update -y ; apt upgrade -y
-RUN DEBIAN_FRONTEND=noninteractive apt install -y vim wget vim gradle curl libmongodb-java software-properties-common gnupg apt-transport-https ca-certificates
+RUN DEBIAN_FRONTEND=noninteractive apt install -y vim wget vim maven curl libmongodb-java software-properties-common gnupg apt-transport-https ca-certificates 
 
 # install java 
 RUN mkdir -p /usr/java/openjdk
 RUN cd /usr/java/openjdk
 RUN wget https://download.java.net/java/GA/jdk18.0.2.1/db379da656dc47308e138f21b33976fa/1/GPL/openjdk-18.0.2.1_linux-x64_bin.tar.gz
+# RUN cp ../openjdk-18.0.2.1_linux-x64_bin.tar.gz openjdk-18.0.2.1_linux-x64_bin.tar.gz
 RUN tar -xzvf openjdk-18.0.2.1_linux-x64_bin.tar.gz
 RUN cd jdk-18.0.2.1/
 RUN JAVA_HOME=$(pwd) ; echo "JAVA_HOME=$(pwd)" >> /etc/profile
@@ -19,7 +20,7 @@ RUN update-alternatives --install "/usr/bin/javac" "javac" "$JAVA_HOME/bin/javac
 RUN echo 1 | update-alternatives --config java
 RUN cd ~
 
-ADD . /quiz
-WORKDIR /quiz
-RUN chmod +x quiz.sh
-ENTRYPOINT ["./quiz.sh"]
+# ADD . /aws
+# WORKDIR /aws
+# RUN chmod +x quiz.sh
+# ENTRYPOINT ["./quiz.sh"]

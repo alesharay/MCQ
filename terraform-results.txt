@@ -1,0 +1,13 @@
+
+46 Questions Total
+
+ 
+1. One remote backend configuration always maps to a single remote workspace
+	T. True
+	F. False
+
+(examples: d | bcd | q) (q to quit)
+Selection (letter(s) only): q
+
+
+Final Score: 0 correct / 0 answered - 0%

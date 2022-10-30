@@ -20,23 +20,23 @@ run: # Run the app
 
 A  AWS: ## Start the AWS Certified Cloud Practioner Quiz
 
-	@. aws_cp_mcq/quiz.sh
+	@$(MAKE) load_db COLLECTION=awsQuestions DB_FILE=awsQuestion.json
+	@clear
+	@./exam.sh
+#	@. aws_cp_mcq/quiz.sh
 	@exit 0
 
 B  TERRAFORM: ## Start the HashiCorp: Terraform Associate Quiz
 
-	@. terraform_associate_mcq/quiz.sh
-	@exit 0
+	@$(MAKE) load_db COLLECTION=terraformQuestions DB_FILE=terraformQuestion.json
+	@clear
+	@./exam.sh
 
 C  AZURE: ## Start the HashiCorp: Azure Fundamentals Quiz
 
-	@. azure_fundamentals_mcq/quiz.sh
-	@exit 0
-
-D  TEMPLATE: ## Start the HashiCorp: Azure Fundamentals Quiz
-
-	@. quiz_template/quiz.sh
-	@exit 0
+	@$(MAKE) load_db COLLECTION=azureQuestions DB_FILE=azureQuestion.json
+	@clear
+	@./exam.sh
 
 u usage: # Show usage message
 
@@ -88,6 +88,10 @@ dr install-docker-rhel: config-rhel #- Install Docker on RedHat Linux
 
 quizzes: # List all available quizzes
 	@egrep -h '\s##\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "${BLUE}%-25s${RESET} %s\n", $$1, $$2}'
+
+
+load_db: # Load specified quiz questions into running DB; takes a collection and db file located in the mongo-seed direction (e.g. COLLECTION=<> DB_FILE=<>)
+	@docker exec -it quiz-mongodb mongoimport --username admin --password admin --uri mongodb://@quiz-mongodb:27017/MCQ?authSource=admin --collection $(COLLECTION) --drop --file mongo-seed/$(DB_FILE) --jsonArray
 
 c config-menu: # List config options
 	@egrep -h '\s#-\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?#- "}; {printf "${BLUE}%-25s${RESET} %s\n", $$1, $$2}'

@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
 # mongosh --username admin --password admin --authenticationDatabase=admin
-clear
-
 RESET='\033[0m'           # Text Reset
 
 # Regular Colors
@@ -50,11 +48,6 @@ function sortArray() {
 }
 
 
-function load_db() {
-  docker exec -it mongodb mongoimport --username admin --password admin --uri mongodb://@mongodb:27017/MCQ?authSource=admin --collection awsQuestions --drop --file mongo-seed/Question.json --jsonArray
-}
-
-
 function getNums() {
   local nums=""
   num=0
@@ -74,7 +67,6 @@ function getRandomNumber() {
   numbers=`echo $numbers | sed "s/\'$index\ '//"`
   echo $index
 }
-
 
 
 function getAllQuestions() {
@@ -152,12 +144,9 @@ function getAllQuestions() {
     percentScore=0
   else
       percentScore=`awk -v correct=$CORRECT -v total=$INDEX 'BEGIN{printf "%d",correct/total*100}'`
-    # percentScore=$(( CORRECT * INDEX / 100 ))
   fi
 
   echo -e "${BPURPLE}\n\nFinal Score${RESET}: $CORRECT correct / $INDEX answered - ${BPURPLE}$percentScore%${RESET}) "
 }
-
-# load_db
 
 getAllQuestions

@@ -1,7 +1,7 @@
 version: "3.3"
 services:
-  mongodb:
-    container_name: mongodb
+  quiz-mongodb:
+    container_name: quiz-mongodb
     volumes:
       - "mongodb_data_container:/data/db"
       - "./mongo-seed:/mongo-seed"
@@ -14,44 +14,24 @@ services:
       mcq:
         ipv4_address: 172.16.0.1
     command: mongod --bind_ip 127.0.0.1,172.16.0.1
-    image: mongo
+    image: mongo:latest
     env_file:
       - .env
-  mongo-seed:
-    env_file:
-      - .env
-    build:
-      context: ./mongo-seed
-      dockerfile: Dockerfile
-      args:
-        - DATABASE_URI=$DATABASE_URI
-        - USERNAME=$MONGO_INITDB_ROOT_USERNAME
-        - PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+  quizzes:
+    privileged: true
+    volumes:
+      - .:/app"
+    image: alesharay100/quizzes:v1.0
+    ports:
+      - "8102:8102"
     networks:
       mcq:
     depends_on:
-      - mongodb
-    volumes:
-      - "./mongo-db:/data/db"
-  # quizzes:
-  #   privileged: true
-  #   network_mode: mcq_mcq
-  #   volumes:
-  #     - .:/app"
-  #   image: quizzes
-  #   networks:
-  #     mcq:
-  #   depends_on:
-  #     - mongodb
-  #   env_file:
-  #     - .env
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #     args:
-  #       - DATABASE_URI=$DATABASE_URI
-  #       - USERNAME=$MONGO_INITDB_ROOT_USERNAME
-  #       - PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+      - quiz-mongodb
+    env_file:
+      - .env
+    links:
+      - quiz-mongodb
 
 networks:
   mcq:

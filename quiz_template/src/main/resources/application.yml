@@ -1,12 +1,14 @@
 spring:
+  # profiles: [aws, terraform, azure]
   data:
     mongodb:
-#      host: mongodb
-#      port: 27017
-#      database: MCQ
-#      username: admin
-#      password: admin
-      uri: "mongodb://admin:admin@localhost:27017/MCQ?authSource=admin"
+      host: quiz-mongodb
+      port: 27017
+      database: MCQ
+      username: admin
+      password: admin
+      authSource: admin
+      uri: "mongodb://${spring.data.mongodb.username}:${spring.data.mongodb.password}@${spring.data.mongodb.host}:${spring.data.mongodb.port}/${spring.data.mongodb.database}?authSource=${spring.data.mongodb.authSource}"
   application:
     name: mcqQuestions
 

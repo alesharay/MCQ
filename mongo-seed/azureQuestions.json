@@ -1,0 +1,162 @@
+[
+  {
+    "id": "1",
+    "question": "Your company intends to subscribe to an Azure support plan. The support plan must allow for new support requests to be opened.\nWhich of the following are support plans that will sllow this? [Choose Four]",
+    "options": "\n\tA. Basic\n\tB. Developer\n\tC. Standard\n\tD. Professional Direct\n\tE. Premier",
+    "explanation": " Reference: https://azure.microsoft.com/en-us/support/plans/",
+    "type": "Multiple Answer",
+    "answer": "BCDE"
+  },
+  {
+    "id": "2",
+    "question": "Your comany has datacenters in Los Angeles and New York. The company has a Microsoft Azure subscription. You are configuring the two datacenters as geo-clustered sites for site resiliency. You eed to recommend an Azure storage redundacy option. You have the following data storage requirements:\n\n\t-> Data must be stored on multiple nodes\n\t-> Data must be stored on nodes in separate geographic locations\n\t-> Data can be read from the secondary location as well as from the primary location\n\nWhich of the following Azure stored redundancy options should you recommend?",
+    "options": "\n\tA. Geo-redundant storage\n\tB. Read-only geo-redundant storage\n\tC. Zone-redundant storage\n\tD. Locally redundant storage",
+    "explanation": "Reference: https: //docs.microsoft.com/en-us/azure/storage/common/storage-redundancy\nReference: https: //docs.microsoft.com/en-us/azure/storage/common/storage-redundancy-grs#read-access-geo-redundant-storage",
+    "type": "Multiple Choice",
+    "answer": "B"
+  },
+  {
+    "id": "3",
+    "question": "Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company's Azure subscription includes a Basic support plan. They would like to request an assessment of an Azure environment's design from Microsoft. This is, however, not supported by the existing plan. You want to make sure that the company subscribes to a support plan that allows this functionality, while keeping expenses to a minimum.\n\tSolution: You recommend that the company subscribes to the Professional Direct support plan.\nDoes the solution meet the goal?",
+    "options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference: https://azure.microsoft.com/en-gb/support-plans",
+    "type": "True/False",
+    "answer": "N"
+  },
+  {
+    "id": "4",
+    "question": "Note: The question is included in a number of questions that depicts the identical set-up However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYou are tasked with deploying Azure virtual machines for your company. You need to make use of the appropriate cloud deployment solution.\n\tSolution: You should make use of Software as a Service (SaaS).\nDoes the solution meet the goal?",
+    "options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "True/False",
+    "answer": "N"
+  },
+  {
+    "id": "5",
+    "question":"Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\nYou are tasked with deploying Azure virtual machines for your company. You need to make use of the appropriate cloud deployment solution.\n\tSolution: You should make use of Platform as a Service (PaaS).\nDoes the solution meet the goal?",
+    "options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "True/False",
+    "answer": "N"
+  },
+  {
+    "id": "6",
+    "question":"Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\nYou are tasked with deploying Azure virtual machines for your company. You need to make use of the appropriate cloud deployment solution.\n\tSolution: You should make use of Infrastructure as a Service (IaaS).\nDoes the solution meet the goal?",
+		"options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "True/False",
+    "answer": "Y"
+  },
+  {
+    "id": "7",
+    "question":"Your developers have created 10 web applications that must be host on Azure. You need to determine which Azure web tier plan to host the web apps. The web tier plan must meet the following requirements:\n\n\t-> The web apps will use custom domains.\n\t-> The web apps each require 10 GB of storage.\n\t-> The web apps must each run in dedicated compute instances.\n\t-> Load balancing between instances must be included.\n\t-> Costs must be minimized.\n\nWhich web tier plan should you use?",
+		"options":"\n\tA. Standard\n\tB. Basic\n\tC. Free\n\tD. Shared",
+    "explanation":" Reference: http: //azure.microsoft.com/en-us/pricing/details/websites/",
+    "type": "Multiple Choice",
+    "answer": "A"
+  },
+  {
+    "id": "8",
+    "question":"Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYou are planning to migrate a company to Azure. Each of the company's numerous divisions will have an administrator in place to manage the Azure resources used by their respective division. You want to make sure that the Azure deployment you employ allows for Azure to be segmented for the divisions, while keeping administrative effort to a minimum.\n\tSolution: You plan to make use of several Azure Active Directory (Azure AD) directories.\nDoes the solution meet the goal?",
+		"options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "True/False",
+    "answer": "N"
+  },
+  {
+    "id": "9",
+    "question":"Your developers have created a portal web app for users in the Miami branch office. The web app will be publicly accessible and used by the Miami users to retrieve customer and product information. The web app is currently running in an on-premises test environment. You plan to host the web app on Azure. You need to determine which Azure web tier plan to host the web app. The web tier plan must meet the following requirements:\n\n\t-> The website will use the miami.weyland.com URL.\n\t-> The website will be deployed to two instances.\n\t-> SSL support must be included.\n\t-> The website requires 12 GB of storage.\n\t-> Costs must be minimized.\n\nWhich web tier plan should you use?",
+		"options":"\n\tA. Standard\n\tB. Basic\n\tC. Free\n\tD. Shared",
+    "explanation":" Reference: http: //azure.microsoft.com/en-us/documentation/articles/azure-subscription-service-limits/",
+    "type": "Multiple Choice",
+    "answer": "A"
+  },
+  {
+    "id": "10",
+    "question":"Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company is planning to migrate all their virtual machines to an Azure pay-as-you-go subscription. The virtual machines are currently hosted on the Hyper-V hosts in a data center. You are required make sure that the intended Azure solution uses the correct expenditure model.\n\tSolution: You should recommend the use of the elastic expenditure model.5 the solution meet the goal?",
+		"options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "True/False",
+    "answer": "N"
+  },
+  {
+    "id": "11",
+    "question":"Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company is planning to migrate all their virtual machines to an Azure pay-as-you-go subscription. The virtual machines are currently hosted on the Hyper-V hosts in a data center. You are required make sure that the intended Azure solution uses the correct expenditure model.\n\tSolution: You should recommend the use of the scalable expenditure model.\nDoes the solution meet the goal?",
+		"options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "True/False",
+    "answer": "N"
+  },
+  {
+    "id": "12",
+    "question":"Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company is planning to migrate all their virtual machines to an Azure pay-as-you-go subscription. The virtual machines are currently hosted on the Hyper-V hosts in a data center.You are required make sure that the intended Azure solution uses the correct expenditure model.\n\tSolution: You should recommend the use of the operational expenditure model.\nDoes the solution meet the goal?",
+		"options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "True/False",
+    "answer": "Y"
+  },
+  {
+    "id": "13",
+    "question":"Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYou are required to deploy an Artificial Intelligence (AI) solution in Azure. You want to make sure that you are able to build, test, and deploy predictive analytics for the solution.\n\tSolution: You should make use of Azure Cosmos DB.\nDoes the solution meet the goal?",
+		"options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "True/False",
+    "answer": "N"
+  },
+  {
+    "id": "14",
+    "question":"Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company's Active Directory forest includes thousands of user accounts. You have been informed that all network resources will be migrated to Azure. Thereafter, the on-premises data center will be retired. You are required to employ a strategy that reduces the effect on users, once the planned migration has been completed.\n\tSolution: You plan to sync all the Active Directory user accounts to Azure Active Directory (Azure AD).\nDoes the solution meet the goal?",
+		"options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "True/False",
+    "answer": "Y"
+  },
+  {
+    "id": "15",
+    "question":"Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYou are required to deploy an Artificial Intelligence (AI) solution in Azure.\nYou want to make sure that you are able to build, test, and deploy predictive analytics for the solution.\n\tSolution: You should make use of Azure Machine Learning Studio.\nDoes the solution meet the goal?",
+		"options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "True/False",
+    "answer": "Y"
+  },
+  {
+    "id": "16",
+    "question":"Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company's infrastructure includes a number of business units that each need a large number of various Azure resources for everyday operation. The resources required by each business unit are identical. You are required to sanction a strategy to create Azure resources automatically.\n\tSolution: You recommend that the Azure API Management service be included in the strategy.\nDoes the solution meet the goal?",
+		"options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "True/False",
+    "answer": "N"
+  },
+  {
+    "id": "17",
+    "question":"Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYour company's infrastructure includes a number of business units that each need a large number of various Azure resources for everyday operation. The resources required by each business unit are identical. You are required to sanction a strategy to create Azure resources automatically.\n\tSolution: You recommend that management groups be included in the strategy.\nDoes the solution meet the goal?",
+		"options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "True/False",
+    "answer": "N"
+  },
+  {
+    "id": "18",
+    "question":"Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements. \n\nYour company's infrastructure includes a number of business units that each need a large number of various Azure resources for everyday operation. The resources required by each business unit are identical. You are required to sanction a strategy to create Azure resources automatically.\n\tSolution: You recommend that the Azure Resource Manager templates be included in the strategy.\nDoes the solution meet the goal?",
+		"options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "Multiple Choice",
+    "answer": "Y"
+  },
+  {
+    "id": "19",
+    "question":"Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements. \n\nYou are tasked with deploying a critical LOB application, which will be installed on a virtual machine, to Azure. You are informed that the application deployment strategy should allow for a guaranteed availability of 99.99 percent. You need to make sure that the strategy requires as little virtual machines and availability zones as possible.\n\tSolution: You include two virtual machines and one availability zone in your strategy.\nDoes the solution meet the goal?",
+		"options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "True/False",
+    "answer": "N"
+  },
+  {
+    "id": "20",
+    "question":"Note: The question is included in a number of questions that depicts the identical set-up. However, every question has a distinctive result. Establish if the solution satisfies the requirements.\n\nYou are tasked with deploying a critical LOB application, which will be installed on a virtual machine, to Azure. You are informed that the application deployment strategy should allow for a guaranteed availability of 99.99 percent. You need to make sure that the strategy requires as little virtual machines and availability zones as possible. \n\tSolution: You include one virtual machine and two availability zones in your strategy.\nDoes the solution meet the goal?",
+		"options": "\n\tY. Yes\n\n\tN. No",
+    "explanation": " Reference:",
+    "type": "True/False",
+    "answer": "N"
+  }
+]

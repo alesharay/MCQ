@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document("awsQuestions")
+@Document("Questions")
 public class Question {
   @Id
   private String id = new ObjectId().toString();

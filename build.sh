@@ -7,10 +7,12 @@ BUILDKIT_INLINE_CACHE=1 \
 DOCKER_DEFAULT_PLATFORM=linux/amd64 \
 docker-compose up -d --build
 
+echo
+echo "Waiting for containers to be fully up and running..."
+
 until [[ "`docker logs mcq-quizzes-1 | grep Local | awk '{ print $1 }'`" == "Local:" ]]; do
-# until [ "`docker inspect -f {{.State.Running}} mcq-quizzes-1`"=="true" ]; do
-    sleep 0.1;
-done;
+    sleep 0.1
+done
 
 make --no-print-directory run CHOICE=${RESPONSE}
 

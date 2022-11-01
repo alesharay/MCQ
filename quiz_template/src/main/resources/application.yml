@@ -1,5 +1,4 @@
 spring:
-  # profiles: [aws, terraform, azure]
   data:
     mongodb:
       host: quiz-mongodb
@@ -14,12 +13,6 @@ spring:
 
 application:
   version: 0.0.1-SNAPSHOT
-  #      jwtProperties:
-  #          key: this_is_really_a_strong_private_key_which_can_not_be_cracked_by_any_psycho_programmer
-  #          alg: HS512
-  #          sub: JWT
-  #          iss: iss
-  #          clientCodes: apigee-proxy-service,apigee-proxy-service
   cors:
     allowed-origins: "*"
     allowed-methods: "*"

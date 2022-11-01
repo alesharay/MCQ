@@ -127,21 +127,28 @@ load_db_local: # Load specified quiz questions into running local DB; takes a co
 
 
 show_collections: # Show collections for the MCQ database
-	@docker exec quiz-mongodb mongosh quiz-mongodb:27017/MCQ --username admin --password admin --eval "show collections"
+	@docker exec quiz-mongodb mongosh quiz-mongodb:27017/MCQ --authenticationDatabase admin --username admin --password admin --eval "show collections"
 
 show_collections_local: # Show collections for the MCQ database
 	@mongosh localhost:27017/MCQ --eval "show collections"
 
 
+mongosh: # run mongosh commands
+	@docker exec quiz-mongodb mongosh quiz-mongodb:27017/MCQ --authenticationDatabase admin --username admin --password admin --eval "${COMMAND}"
+
+mongosh_local: # run mongosh commands
+	@mongosh localhost:27017/MCQ --eval "${COMMAND}"
+
+
 drop_collection: # Show collections for the MCQ database
-	@docker exec quiz-mongodb mongosh quiz-mongodb:27017/MCQ --username admin --password admin --eval "db.${COLLECTION}.drop()"
+	@docker exec quiz-mongodb mongosh quiz-mongodb:27017/MCQ --authenticationDatabase admin --username admin --password admin --eval "db.${COLLECTION}.drop()"
 
 drop_collection_local: # Show collections for the MCQ database
 	@mongosh localhost:27017/MCQ --eval "db.${COLLECTION}.drop()"
 
 
 drop_db: # Drop the MCQ database
-	@docker exec quiz-mongodb mongosh quiz-mongodb:27017/MCQ --username admin --password admin --eval "db.dropDatabase()"
+	@docker exec quiz-mongodb mongosh quiz-mongodb:27017/MCQ --authenticationDatabase admin --username admin --password admin --eval "db.dropDatabase()"
 
 drop_db_local: # Drop the MCQ database
 	@mongosh localhost:27017/MCQ --eval "db.dropDatabase()"

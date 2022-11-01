@@ -7,7 +7,8 @@ BUILDKIT_INLINE_CACHE=1 \
 DOCKER_DEFAULT_PLATFORM=linux/amd64 \
 docker-compose up -d --build
 
-until [ "`docker inspect -f {{.State.Running}} mcq-quizzes-1`"=="true" ]; do
+until [[ "`docker logs mcq-quizzes-1 | grep Local | awk '{ print $1 }'`" == "Local:" ]]; do
+# until [ "`docker inspect -f {{.State.Running}} mcq-quizzes-1`"=="true" ]; do
     sleep 0.1;
 done;
 

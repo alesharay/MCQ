@@ -8,14 +8,16 @@ DOCKER_DEFAULT_PLATFORM=linux/amd64 \
 
 CHANGES_MADE=$1
 
-if [[ "$CHANGES_MADE" == ["y"|"yes"] ]]; 
-then
-  docker buildx create --use
-  docker buildx build --push --platform linux/arm64,linux/amd64 --tag alesharay100/quizzes:v1.0 .
-  docker-compose -f ../docker-compose.yml up --build
-else
-  docker-compose -f ../docker-compose.yml up
-fi
+case $CHANGES_MADE in
+    y|yes)
+      docker buildx create --use
+      docker buildx build --push --platform linux/arm64,linux/amd64 --tag alesharay100/quizzes:v1.0 .
+      docker-compose -f ../docker-compose.yml up --build
+      ;;
+    *)
+      docker-compose -f ../docker-compose.yml up
+      ;;
+esac
 
 
 # EXPERIMENTAL/DEBUGGING

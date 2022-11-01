@@ -90,8 +90,47 @@ quizzes: # List all available quizzes
 	@egrep -h '\s##\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "${BLUE}%-25s${RESET} %s\n", $$1, $$2}'
 
 
+# Shell Help:
+#
+#     use                                        Set current database
+#     show                                       'show databases'/'show dbs': Print a list of all available databases.
+#                                                'show collections'/'show tables': Print a list of all collections for current database.
+#                                                'show profile': Prints system.profile information.
+#                                                'show users': Print a list of all users for current database.
+#                                                'show roles': Print a list of all roles for current database.
+#                                                'show log <type>': log for current connection, if type is not set uses 'global'
+#                                                'show logs': Print all logs.
+#
+#     exit                                       Quit the MongoDB shell with exit/exit()/.exit
+#     quit                                       Quit the MongoDB shell with quit/quit()
+#     Mongo                                      Create a new connection and return the Mongo object. Usage: new Mongo(URI, options [optional])
+#     connect                                    Create a new connection and return the Database object. Usage: connect(URI, username [optional], password [optional])
+#     it                                         result of the last line evaluated; use to further iterate
+#     version                                    Shell version
+#     load                                       Loads and runs a JavaScript file into the current shell environment
+#     enableTelemetry                            Enables collection of anonymous usage data to improve the mongosh CLI
+#     disableTelemetry                           Disables collection of anonymous usage data to improve the mongosh CLI
+#     passwordPrompt                             Prompts the user for a password
+#     sleep                                      Sleep for the specified number of milliseconds
+#     print                                      Prints the contents of an object to the output
+#     printjson                                  Alias for print()
+#     cls                                        Clears the screen like console.clear()
+#     isInteractive                              Returns whether the shell will enter or has entered interactive mode
+#
+#   For more information on usage: https://docs.mongodb.com/manual/reference/method
+
+
 load_db: # Load specified quiz questions into running DB; takes a collection and db file located in the mongo-seed direction (e.g. COLLECTION=<> DB_FILE=<>)
 	@docker exec -it quiz-mongodb mongoimport --username admin --password admin --uri mongodb://@quiz-mongodb:27017/MCQ?authSource=admin --collection $(COLLECTION) --drop --file mongo-seed/$(DB_FILE) --jsonArray
+
+show_collections:
+	@docker exec quiz-mongodb mongosh --host quiz-mongodb --port 27017 --username admin --password admin --eval "show collections"
+
+drop_collection:
+	@docker exec quiz-mongodb mongosh --host quiz-mongodb --port 27017 --username admin --password admin --eval "db.${COLLECTION}.drop"
+
+drop_db:
+	@docker exec quiz-mongodb mongosh --host quiz-mongodb --port 27017 --username admin --password admin --eval "db.${COLLECTION}.drop"
 
 c config-menu: # List config options
 	@egrep -h '\s#-\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?#- "}; {printf "${BLUE}%-25s${RESET} %s\n", $$1, $$2}'

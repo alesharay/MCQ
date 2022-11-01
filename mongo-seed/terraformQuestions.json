@@ -1,0 +1,370 @@
+[
+  {
+    "id": "1",
+    "question": "The terraform.tfstate file always matches your currently built infrastructure",
+    "options": "\n\tT. True\n\tF. False",
+    "answer": "F",
+    "explanation": "Explanation: The terraform.tfstate file can be updated and the infrastructure will be updated based on the update\nReference: https: //developer.hashicorp.com/terraform/language/state",
+    "type": "True/False"
+  },
+  {
+    "id": "2",
+    "question": "One remote backend configuration always maps to a single remote workspace",
+    "options": "\n\tT. True\n\tF. False",
+    "answer": "F",
+    "explanation": "Explanation: The remote backend can work with either a single remote Terraform Cloud workspace or with multiple similarly-named remote workspaces\nReference: https: //developer.hashicorp.com/terraform/language/settings/backends/remote",
+    "type": "True/False"
+  },
+  {
+    "id": "3",
+    "question": "How is the Terraform remote backend different from other state backends such as S3, Consul, Etc",
+    "options": "\n\tA. It can execute Terraform run on dedicated infrastructure on-prem or in Terraform Cloud\n\tB. It doesn't show the output of a `terraform apply` locally\n\tC. It is only available to paying customers\n\tD. All of the above",
+    "answer": "A",
+    "explanation": "Reference: https://www.terraform.io/docs/language/settings/backends/index",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "4",
+    "question": "What is the workflow for deploying new infrastructure with Terraform?",
+    "options": "\n\tA. A `terraform plan` to import the current infrastructure to the state file, make code changes, and `terraform apply` to update the infrastructure\n\tB. Write a Terraform configuration, run `terraform show` to view proposed changes, and `terraform apply` to create new infrastructure.\n\tC. `terraform import` to import the current infrastructure to the state file, make code changes, and `terraform apply` to update the infrastructure\n\tD. Write a Terraform configuration, run `terraform init`, run `terraform plan` to view planned infrastructure changes, and `terraform apply` to create new infrastructure",
+    "answer": "D",
+    "explanation": "Reference: https://developer.hashicorp.com/terraform/intro/core-workflow",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "5",
+    "question": "A provider configuration block is required in every Terraform configuration.\n\tExample:\n\t\tprovider \"provider_name\"{\n\t\t\t...\n\t\t}",
+    "options": "\n\tT. True\n\tF. False",
+    "answer": "T",
+    "explanation": "Reference: https://developer.hashicorp.com/terraform/language/providers/configuration",
+    "type": "True/False"
+  },
+  {
+    "id": "6",
+    "question": "You run a local-exec provisioner in a null resource called null_resource.run_script and realize that you need to rerun the script.\nWhich of the following commands would you use first?`",
+    "options": "\n\tA. A `terraform plan` to import the current infrastructure to the state file, make code changes, and `terraform apply` to update the infrastructure\n\tB. Write a Terraform configuration, run `terraform show` to view proposed changes, and `terraform apply` to create new infrastructure.\n\tC. `terraform import` to import the current infrastructure to the state file, make code changes, and `terraform apply` to update the infrastructure\n\tD. Write a Terraform configuration, run `terraform init`, run `terraform plan` to view planned infrastructure changes, and `terraform apply` to create new infrastructure",
+    "answer": "A",
+    "explanation": "Reference: https://developer.hashicorp.com/terraform/language/resources/provisioners/local-exec",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "7",
+    "question": "Which provisioner invokes a process on the resource created by Terraform?",
+    "options": "\n\tA. remote-exec\n\tB. null-exec\n\tC. local-exec\n\tD. file",
+    "answer": "A",
+    "explanation": "Reference: https://developer.hashicorp.com/terraform/language/resources/provisioners/remote-exec",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "8",
+    "question": "Which of the following is not true of Terraform providers?",
+    "options": "\n\tA. Providers can be written by individuals\n\tB. Providers can be maintained by a community of users\n\tC. Some providers are maintained by HashiCorp\n\tD. Major cloud vendors and non-cloud vendors can write, maintain, or collaborate on Terraform providers\n\tE. None of the above",
+    "answer": "D",
+    "explanation": "Reference: https://jayendrapatil.com/terraform-cheat-sheet/#Terraform_Read_and_write_configuration",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "9",
+    "question": "What command does Terraform require the first time you run it within a configuration directory?",
+    "options": "\n\tA. terraform import\n\tB. terraform init\n\tC. terraform plan\n\tD. terraform workspace",
+    "answer": "B",
+    "explanation": "Reference: https://www.terraform.io/docs/cli/commands/init",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "10",
+    "question": "You have deployed a new webapp with a public IP address on a cloud provider. However, you did not create any outputs for your code.\nWhat is the best method to quickly find the IP address of the resource you deployed?",
+    "options": "\n\tA. Run `terraform output ip_address` to view the result\n\tB. In a new folder, use the terraform_remote_state data source to load in the state file, then write an output for each resource that you find the state file\n\tC. Run `terraform state list` to find the name of the resource, then `terraform state show` to find the attributes including public IP address\n\tD. Run `terraform destroy` then `terraform apply` and look for the IP address in stdout",
+    "answer": "C",
+    "explanation": "Reference: https://developer.hashicorp.com/terraform/language/state",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "11",
+    "question": "Which of the following is not a key principle of Infrastructure as Code (IaC)",
+    "options": "\n\tA. Versioned Infrastructure\n\tB. Golden Images\n\tC. Idempotence\n\tD. Self-describing infrastructure",
+    "answer": "B",
+    "explanation": "Reference: https://www.hashicorp.com/resources/what-is-infrastructure-as-code",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "12",
+    "question": "Terraform variables and outputs that set the \"description\" argument will store that description in the state file",
+    "options": "\n\tT. True\n\tF. False",
+    "answer": "F",
+    "explanation": "Reference: https://developer.hashicorp.com/terraform/language/values/variables#input-variable-documentation",
+    "type": "True/False"
+  },
+  {
+    "id": "13",
+    "question": "What is the provider for this fictitious resource?\n\tresource \"aws_vpc\" \"main\" {\n\t\tname = \"test\"\n\t}",
+    "options": "\n\tA. vpc\n\tB. main\n\tC. aws\n\tD. test",
+    "answer": "C",
+    "explanation": "Reference: https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "14",
+    "question": "If you manually destroy infrastructure, what is the best practice reflecting this change in Terraform",
+    "options": "\n\tA. Run `terraform refresh`\n\tB. It will happen automatically\n\tC. Manually update the state file\n\tD. Run `terraform import`",
+    "answer": "A",
+    "explanation": "Reference: https: //developer.hashicorp.com/terraform/cli/commands/refresh",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "15",
+    "question": "What is not processed when running a terraform refresh?",
+    "options": "\n\tA. State file\n\tB. Configuration file\n\tC. Credentials\n\tD. Cloud provider",
+    "answer": "B",
+    "explanation": "Reference: https: //developer.hashicorp.com/terraform/cli/commands/refresh",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "16",
+    "question": "What information does the public Terraform Module Registry automatically expose about published modules?",
+    "options": "\n\tA. Required input variables\n\tB. Optional inputs variables and default values\n\tC. Outputs\n\tD. All of the above\n\tE. None of the above",
+    "answer": "D",
+    "explanation": "Reference: https: //www.terraform.io/registry/modules/publish",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "17",
+    "question": "If a module uses local values, you can expose that value with a `terraform output`",
+    "options": "\n\tT. True\n\tF. False",
+    "answer": "T",
+    "explanation": "Reference: https: //www.terraform.io/docs/language/values/local\nReference: https: //www.terraform.io/docs/language/values/outputs",
+    "type": "True/False"
+  },
+  {
+    "id": "18",
+    "question": "You should store secret data in the same version control repository as your Terraform configuration",
+    "options": "\n\tT. True\n\tF. False",
+    "answer": "F",
+    "explanation": "Reference: https://blog.gruntwork.io/a-comprehensive-guide-to-managing-secrets-in-your-terraform-code-1d586955ace1",
+    "type": "True/False"
+  },
+  {
+    "id": "19",
+    "question": "Which of the following is not a valid string function in Terraform",
+    "options": "\n\tA. split\n\tB. join\n\tC. slice\n\tD. chomp",
+    "answer": "C",
+    "explanation": "While slice is a valid Terraform string function, it is not from the original list of functions.\nReference: https: //developer.hashicorp.com/terraform/language/functions/slice",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "20",
+    "question": "You have provisioned some virtual machines (VMs) on Google Cloud Platform (GCP) using the gcloud command line tool. However you are standardizing with Terraform and want to manage these VMs using Terraform instead.\nWhat are the two things you must do to achieve this? [Choose Two]",
+    "options": "\n\tA. Provision new VMs using Terraform with the same VM names\n\tB. Use the `terraform import` command for the existing VMs\n\tC. Write Terraform configuration for the existing VMs\n\tD. Run the `terraform import-gcp` command",
+    "answer": "BC",
+    "explanation": "Reference: https: //www.terraform.io/docs/cli/import/usage",
+    "type": "Multiple Answer"
+  },
+  {
+    "id": "21",
+    "question": "You have recently started a new job at a retailer as an engineer. As part of this new role, you have been taskedwith evaluating multiple outages that occurred during peak shopping time during the holiday season. Your investigation found that the team is manually deploying new compute instances and configuring each compute instance.\nHow would you solve this using IaC?",
+    "options": "\n\tA. Implement a ticketing workflow that makes engineers submit a ticket before manually provisioning and configuring a resource\n\tB. Implement a checklist that engineers can follow when configuring compute instances\n\tC. Replace the compute instance type with a larger version to reduce the number of required deployments\n\tD. Implement a provisioning pipeline that deploys infrastructure configurations committed to your version control system following code reviews",
+    "answer": "D",
+    "explanation": "",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "22",
+    "question": "`terraform init` initializes a sample main.tf file in the current directory",
+    "options": "\n\tT. True\n\tF. False",
+    "answer": "F",
+    "explanation": "Reference: https://developer.hashicorp.com/terraform/cli/commands/init",
+    "type": "True/False"
+  },
+  {
+    "id": "23",
+    "question": "Which two steps are required to provision new infrastructure in the Terraform workflow? [Choose Two]",
+    "options": "\n\tA. Destroy\n\tB. Apply\n\tC. Import\n\tD. Init\n\tE. Validate",
+    "answer": "BD",
+    "explanation": "Reference: https: //www.terraform.io/guides/core-workflow",
+    "type": "Multiple Answer"
+  },
+  {
+    "id": "24",
+    "question": "Why would you use the `terraform taint` command?",
+    "options": "\n\tA. When you want to force Terraform to destroy a resource on the next apply\n\tB. When you want to force Terraform to destroy and recreate a resource on the next apply\n\tC. When you want Terraform to ignore a resource on the next apply\n\tD. When you want Terraform to destroy all the infrastructure in your workspace",
+    "answer": "B",
+    "explanation": "Reference: https: //www.terraform.io/docs/cli/commands/taint",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "25",
+    "question": "Terraform requires the Go runtime as a prerequisite for installation",
+    "options": "\n\tT. True\n\tF. False",
+    "answer": "F",
+    "explanation": "Reference: https://www.terraform.io/docs/extend/guides/v1-upgrade-guide",
+    "type": "True/False"
+  },
+  {
+    "id": "26",
+    "question": "When should you use the force-unlock command?",
+    "options": "\n\tA. You see a status message that you cannot acquire the lock\n\tB. You have a high priority change\n\tC. Automatic unlocking failed\n\tD. Your apply failed due to a state lock",
+    "answer": "C",
+    "explanation": "Reference: https: //www.terraform.io/docs/cli/commands/force-unlock",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "27",
+    "question": "Terraform can import modules from a number of sources. Which of the following is not a valid source?",
+    "options": "\n\tA. FTP server\n\tB. GitHub repository\n\tC. Local Path\n\tD. Terraform Module Registry",
+    "answer": "A",
+    "explanation": "Reference: https: //developer.hashicorp.com/terraform/language/modules/sources",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "28",
+    "question": "Which of the following is available only in Terraform Enterprise or Cloud workspace and not in Terraform CLI?",
+    "options": "\n\tA. Secure variable storage\n\tB. Support for multiple cloud providers\n\tC. Dry runs with terraform plan\n\tD. Using the workspace as a data source",
+    "answer": "A",
+    "explanation": "Reference: https: //developer.hashicorp.com/terraform/cloud-docs",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "29",
+    "question": "`terraform validate` validates the syntax of Terraform files.",
+    "options": "\n\tT. True\n\tF. False",
+    "answer": "T",
+    "explanation": "Reference: https://developer.hashicorp.com/terraform/cli/commands/validate",
+    "type": "True/False"
+  },
+  {
+    "id": "30",
+    "question": "You have used Terraform to create an ephemeral development environment in the cloud and are now ready to destroy all of the infrastructure described by your Terraform configuration. To be safe, you would like to first see all the infrastructure that will be deleted by Terraform.\nWhich command should you use to show all of the resources that will be deleted? [Choose Two]",
+    "options": "\n\tA. Run `terraform plan -destroy`\n\tB. This is not possible. You can only show resources that will be created\n\tC. Run `terraform state rm *`\n\tD. Run terraform destroy and it will first output all the resources that will be deleted before prompting for approval",
+    "answer": "AD",
+    "explanation": "Reference: https: //developer.hashicorp.com/terraform/cli/commands/destroy",
+    "type": "Multiple Answer"
+  },
+  {
+    "id": "31",
+    "question": "Which of the following is the correct way to pass the value num_servers into a module with the input servers?",
+    "options": "\n\tA. servers = num_servers\n\tB. servers = variable.num_servers\n\tC. servers = var(num_servers)\n\tD. servers = var.num_servers",
+    "answer": "A",
+    "explanation": "Reference: https: //developer.hashicorp.com/terraform/language/values/variables",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "32",
+    "question": "A Terraform provisioner must be nested inside of a resource configuration block.",
+    "options": "\n\tT. True\n\tF. False",
+    "answer": "T",
+    "explanation": "Reference: https://www.terraform.io/docs/language/resources/provisioners/connection",
+    "type": "True/False"
+  },
+  {
+    "id": "33",
+    "question": "Terraform can run on Windows or Linux, but it requires a Server version of the Windows operating system",
+    "options": "\n\tT. True\n\tF. False",
+    "answer": "T",
+    "explanation": "Reference: https://learn.hashicorp.com/tutorials/terraform/install-cli",
+    "type": "True/False"
+  },
+  {
+    "id": "34",
+    "question": "What does the default \"local\" Terraform backend store?",
+    "options": "\n\tA. tfplan files\n\tB. Terraform binary\n\tC. Provider plugins\n\tD. State file",
+    "answer": "D",
+    "explanation": "Reference: https: //www.terraform.io/docs/language/settings/backends/local",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "35",
+    "question": "You have multiple team members collaborating on Infrastructure as Code (IaC) using Terraform and want to apply formatting standards for readability.\nHow can you format Terraform HashiCorp Configuration Language (HCL) according to standard Terraform style convention?",
+    "options": "\n\tA. Run the `terraform fmt` command during the code linting phase of your CI/CD process\n\tB. Designate one person in each team to review and format everyone's code\n\tC. Manually apply two spaces indentation and align equal sign \" = \" characters in every Terraform file (*.tf)\n\tD. Write a shell script to transfer Terraform files using tools such as awk, Python, and sed",
+    "answer": "A",
+    "explanation": "Reference: https: //www.terraform.io/docs/language/syntax/style",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "36",
+    "question": "What value does the Terraform Cloud/Terraform Enterprise private module registry provide over the public Terraform Module Registry?",
+    "options": "\n\tA. The ability to share modules with public Terraform users and members of Terraform Enterprise Organizations\n\tB. The ability to tag modules by version or release\n\tC. The ability to restrict modules to Terraform Cloud or Enterprise Organizations\n\tD. The ability to share modules publicly with any user of Terraform",
+    "answer": "C",
+    "explanation": "Reference: https: //www.terraform.io/docs/language/modules/sources",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "37",
+    "question": "Which task does `terraform init` not perform?",
+    "options": "\n\tA. Sources all providers present in the configuration and ensures they are downloaded and available locally\n\tB. Connects to the backend\n\tC. Sources any modules and copies the configuration locally\n\tD. Validates all required variables are present",
+    "answer": "D",
+    "explanation": "Reference: https: //www.terraform.io/docs/cli/commands/init",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "38",
+    "question": "You have declared a variable called var.list which is a list of objects that all have an attribute id.\nWhich options will produce a list of the IDs? [Choose Two]",
+    "options": "\n\tA. { for o in var.list : o => o.id}\n\tB. var.list[*].id\n\tC. [ var.list[*].id]\n\tD. [ for o in var.list : o.id]",
+    "answer": "BD",
+    "explanation": "Reference: https: //developer.hashicorp.com/terraform/language/values/variables#list",
+    "type": "Multiple Answer"
+  },
+  {
+    "id": "39",
+    "question": "Which argument(s) is (are) required when declaring a Terraform variable?",
+    "options": "\n\tA. Type\n\tB. Default\n\tC. Description\n\tD. All of the above\n\tE. None of the above",
+    "answer": "E",
+    "explanation": "Reference:  https: //www.terraform.io/docs/language/values/variables",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "40",
+    "question": "When using a module block to reference a module stored on the public Terraform Module Registry such as:\n\tmodule \"consule\" {\n\t\tsource = \"hashicorp/consul/aws\"\n\t}\nHow do you specify version 1.0.0?",
+    "options": "\n\tA. Modules stored on the public Terraform Module Registry do not support versioning\n\tB. Append ?ref=v1.0.0 argument to the source path\n\tC. Add version = \"1.0.0\" attribute to module block\n\tD. Nothing, modules stored on the public Terraform Module Registry always default to version 1.0.0",
+    "answer": "C",
+    "explanation": "Reference: https: //www.terraform.io/docs/language/modules/sources",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "41",
+    "question": "What features does the hosted service Terraform Cloud provide? [Choose Two]",
+    "options": "\n\tA. Automated infrastructure deployment visualization\n\tB. Automatic backups\n\tC. Remote state storage\n\tD. A web-based user interface (UI)",
+    "answer": "CD",
+    "explanation": "Reference: https: //www.terraform.io/docs/enterprise/admin/automated-recovery\nReference: https: //www.terraform.io/docs/language/state/remote",
+    "type": "Multiple Answer"
+  },
+  {
+    "id": "42",
+    "question": "Where does the Terraform local backend store its state?",
+    "options": "\n\tA. In the /tmp directory\n\tB. In the terraform file\n\tC. In the terraform.tfstate file\n\tD. In the user's terraform.state file",
+    "answer": "C",
+    "explanation": "Reference: https: //www.terraform.io/docs/language/settings/backends/local",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "43",
+    "question": "Which option cannot be used to keep secrets out of Terraform configuration files?",
+    "options": "\n\tA. A Terraform provider\n\tB. Environment variables\n\tC. A -var flag\n\tD. Secure string",
+    "answer": "D",
+    "explanation": "Reference: https: //www.terraform.io/use-cases/inject-secrets-into-terraform",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "44",
+    "question": "What is one disadvantage of using dynamic blocks in Terraform?",
+    "options": "\n\tA. They cannot be used to loop through a list of values\n\tB. Dynamic blocks can construct repeatable nested blocks\n\tC. They make configuration harder to read and understand\n\tD. Terraform will run more slowly",
+    "answer": "C",
+    "explanation": "Reference: https: //developer.hashicorp.com/terraform/language/expressions/dynamic-blocks",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "45",
+    "question": "Only the user that generated a plan may apply it.",
+    "options": "\n\tT. True\n\tF. False",
+    "answer": "F",
+    "explanation": "Reference: https: //developer.hashicorp.com/terraform/cli/commands/plan",
+    "type": "True/False"
+  },
+  {
+    "id": "46",
+    "question": "You need to specify a dependency manually.\nWhat resource meta-parameter can you use to make sure Terraform respects the dependency? [fill in the blank]",
+    "options": "",
+    "answer": "depends_on",
+    "explanation": "Reference: https: //developer.hashicorp.com/terraform/language/meta-arguments/depends_on",
+    "type": "Fill in the blank"
+  }
+]

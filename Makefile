@@ -20,7 +20,7 @@ run: # Run the app
 
 A  AWS: ## Start the AWS Certified Cloud Practioner Quiz
 
-	@$(MAKE) load_db COLLECTION=awsQuestions DB_FILE=awsQuestion.json
+	@$(MAKE) load_db COLLECTION=awsQuestions DB_FILE=awsQuestions.json
 	@clear
 	@./exam.sh
 #	@. aws_cp_mcq/quiz.sh
@@ -28,13 +28,13 @@ A  AWS: ## Start the AWS Certified Cloud Practioner Quiz
 
 B  TERRAFORM: ## Start the HashiCorp: Terraform Associate Quiz
 
-	@$(MAKE) load_db COLLECTION=terraformQuestions DB_FILE=terraformQuestion.json
+	@$(MAKE) load_db COLLECTION=terraformQuestions DB_FILE=terraformQuestions.json
 	@clear
 	@./exam.sh
 
 C  AZURE: ## Start the HashiCorp: Azure Fundamentals Quiz
 
-	@$(MAKE) load_db COLLECTION=azureQuestions DB_FILE=azureQuestion.json
+	@$(MAKE) load_db COLLECTION=azureQuestions DB_FILE=azureQuestions.json
 	@clear
 	@./exam.sh
 

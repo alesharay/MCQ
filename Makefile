@@ -20,21 +20,20 @@ run: # Run the app
 
 A  AWS: ## Start the AWS Certified Cloud Practioner Quiz
 
-	@$(MAKE) load_db COLLECTION=awsQuestions DB_FILE=awsQuestions.json
+	@$(MAKE) load_db COLLECTION=Questions DB_FILE=awsQuestions.json
 	@clear
 	@./exam.sh
-#	@. aws_cp_mcq/quiz.sh
 	@exit 0
 
 B  TERRAFORM: ## Start the HashiCorp: Terraform Associate Quiz
 
-	@$(MAKE) load_db COLLECTION=terraformQuestions DB_FILE=terraformQuestions.json
+	@$(MAKE) load_db COLLECTION=Questions DB_FILE=terraformQuestions.json
 	@clear
 	@./exam.sh
 
 C  AZURE: ## Start the HashiCorp: Azure Fundamentals Quiz
 
-	@$(MAKE) load_db COLLECTION=azureQuestions DB_FILE=azureQuestions.json
+	@$(MAKE) load_db COLLECTION=Questions DB_FILE=azureQuestions.json
 	@clear
 	@./exam.sh
 
@@ -123,14 +122,30 @@ quizzes: # List all available quizzes
 load_db: # Load specified quiz questions into running DB; takes a collection and db file located in the mongo-seed direction (e.g. COLLECTION=<> DB_FILE=<>)
 	@docker exec -it quiz-mongodb mongoimport --username admin --password admin --uri mongodb://@quiz-mongodb:27017/MCQ?authSource=admin --collection $(COLLECTION) --drop --file mongo-seed/$(DB_FILE) --jsonArray
 
-show_collections:
-	@docker exec quiz-mongodb mongosh --host quiz-mongodb --port 27017 --username admin --password admin --eval "show collections"
+load_db_local: # Load specified quiz questions into running local DB; takes a collection and db file located in the mongo-seed direction (e.g. COLLECTION=<> DB_FILE=<>)
+	@mongoimport --uri mongodb://localhost:27017/MCQ --collection $(COLLECTION) --drop --file mongo-seed/$(DB_FILE) --jsonArray
 
-drop_collection:
-	@docker exec quiz-mongodb mongosh --host quiz-mongodb --port 27017 --username admin --password admin --eval "db.${COLLECTION}.drop"
 
-drop_db:
-	@docker exec quiz-mongodb mongosh --host quiz-mongodb --port 27017 --username admin --password admin --eval "db.${COLLECTION}.drop"
+show_collections: # Show collections for the MCQ database
+	@docker exec quiz-mongodb mongosh quiz-mongodb:27017/MCQ --username admin --password admin --eval "show collections"
+
+show_collections_local: # Show collections for the MCQ database
+	@mongosh localhost:27017/MCQ --eval "show collections"
+
+
+drop_collection: # Show collections for the MCQ database
+	@docker exec quiz-mongodb mongosh quiz-mongodb:27017/MCQ --username admin --password admin --eval "db.${COLLECTION}.drop()"
+
+drop_collection_local: # Show collections for the MCQ database
+	@mongosh localhost:27017/MCQ --eval "db.${COLLECTION}.drop()"
+
+
+drop_db: # Drop the MCQ database
+	@docker exec quiz-mongodb mongosh quiz-mongodb:27017/MCQ --username admin --password admin --eval "db.dropDatabase()"
+
+drop_db_local: # Drop the MCQ database
+	@mongosh localhost:27017/MCQ --eval "db.dropDatabase()"
+
 
 c config-menu: # List config options
 	@egrep -h '\s#-\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?#- "}; {printf "${BLUE}%-25s${RESET} %s\n", $$1, $$2}'

@@ -9,10 +9,11 @@ docker-compose up -d --build
 
 echo
 echo "Waiting for containers to be fully up and running..."
+echo
 
 until [[ "`docker logs mcq-quizzes-1 | grep Local | awk '{ print $1 }'`" == "Local:" ]]; do
-    sleep 0.1
-done
+    sleep 0.1;
+done;
 
 make --no-print-directory run CHOICE=${RESPONSE}
 

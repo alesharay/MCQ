@@ -44,6 +44,7 @@ case $ANSWER in
   A|AWS)
     clear ; echo -e "Chosen Quiz: ${BYELLOW}AWS Certified Cloud Practitioner (CLF-C01)${RESET}"
     make generating AWS
+    mv results.txt aws-results.txt
     echo ; echo
     echo -e "Results file created at ${BGREEN}aws-results.txt${RESET}"
     echo
@@ -51,6 +52,7 @@ case $ANSWER in
   B|TERRAFORM)
     clear ; echo -e "Chosen Quiz: ${BYELLOW}HashiCorp: Terraform Associate (002)${RESET}"
     make generating TERRAFORM
+    mv results.txt terraform-results.txt
     echo ; echo
     echo -e "Results file created at ${BGREEN}terraform-results.txt${RESET}"
     echo
@@ -58,15 +60,9 @@ case $ANSWER in
   C|AZURE)
     clear ; echo -e "Chosen Quiz: ${BYELLOW}Microsoft Certified: Azure Fundamentals (AZ-900)${RESET}"
     make generating AZURE
+    mv results.txt azure-results.txt
     echo ; echo
     echo -e "Results file created at ${BGREEN}azure-results.txt${RESET}"
-    echo
-    ;;
-  D|Template)
-    clear ; echo -e "Chosen Quiz: ${BYELLOW}Microsoft Certified: Azure Fundamentals (AZ-900)${RESET}"
-    make generating TEMPLATE
-    echo ; echo
-    echo -e "Results file created at ${BGREEN}template-results.txt${RESET}"
     echo
     ;;
   H|HELP)

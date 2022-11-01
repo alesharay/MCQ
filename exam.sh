@@ -71,7 +71,10 @@ function getRandomNumber() {
 
 function getAllQuestions() {
 
-  echo -e "${YELLOW}$SIZE Questions Total${RESET}" ; echo
+  FILENAME="results.txt"
+
+  echo -e "${YELLOW}$SIZE Questions Total${RESET}" | tee -a ${FILENAME}
+  echo | tee -a ${FILENAME}
   CORRECT=0
 
   TOTAL=0
@@ -80,27 +83,27 @@ function getAllQuestions() {
     element=`getRandomNumber`
     TOTAL=$(($INDEX+1))
 
-    echo -en "$TOTAL. " ;
+    echo -en "$TOTAL. " | tee -a ${FILENAME}
     echo "$DOCUMENTS" | \
       jq --argjson index $element '.[$index].question' | \
       sed 's/\\n/\n/g' | \
       sed 's/\\"/"/g' | \
       sed 's/\\t/\t/g' | \
-      awk -F\\n -v blue=${BLUE} -v reset=${RESET} '{ print blue$1 $2reset; }'
+      awk -F\\n -v blue=${BLUE} -v reset=${RESET} '{ print blue$1 $2reset; }' | tee -a ${FILENAME}
 
     echo "$DOCUMENTS" | \
       jq --argjson index $element '.[$index].options' | \
       sed 's/\\n/\n/g' | \
       sed 's/\"//g' | \
-      sed 's/\\t/\t/g'
+      sed 's/\\t/\t/g' | tee -a ${FILENAME}
 
-    echo
+    echo | tee -a ${FILENAME}
 
     echo -ne "\n(examples: d | bcd | q) (q to quit)\nSelection (letter(s) only): "
     read -e SELECTION
     SELECTION=`echo $SELECTION | xargs | tr '[:lower:]' '[:upper:']`
 
-    echo
+    echo | tee -a ${FILENAME}
 
     ANSWER=`echo "$DOCUMENTS" | jq --argjson index $element '.[$index].answer' | \
     sed 's/\"//g' | xargs`
@@ -111,7 +114,7 @@ function getAllQuestions() {
       break
     fi
 
-    echo
+    echo | tee -a ${FILENAME}
 
     TYPE=`echo "$DOCUMENTS" | jq --argjson index $element '.[$index].type' | \
     sed 's/\"//g' | xargs | tr ''[:lower:] '[:upper:]'`
@@ -122,20 +125,20 @@ function getAllQuestions() {
       SELECTION=`sortArray  "${answer}" | sed 's/ //g'`
     fi
 
-    echo
+    echo | tee -a ${FILENAME}
 
     if [[ "$SELECTION" == "$ANSWER" ]]; then
       CORRECT=$((CORRECT + 1))
-      echo -e "${BGREEN}Correct!${RESET}"
+      echo -e "${BGREEN}Correct!${RESET}" | tee -a ${FILENAME}
     else
-      echo -e "${BRED}Incorrect!${RESET} Correct answer is ${GREEN}$ANSWER${RESET}"
+      echo -e "${BRED}Incorrect!${RESET} Correct answer is ${GREEN}$ANSWER${RESET}" | tee -a ${FILENAME}
     fi
 
 
     EXPLANATION=`echo "$DOCUMENTS" | jq --argjson index $element '.[$index].explanation' | sed 's/\"//g'`
-    echo -e "$EXPLANATION"
+    echo -e "$EXPLANATION" | tee -a ${FILENAME}
 
-    echo
+    echo | tee -a ${FILENAME}
 
     INDEX=$(($INDEX+1))
   done
@@ -147,7 +150,7 @@ function getAllQuestions() {
       percentScore=`awk -v correct=$CORRECT -v total=$INDEX 'BEGIN{printf "%d",correct/total*100}'`
   fi
 
-  echo -e "${BPURPLE}\n\nFinal Score${RESET}: $CORRECT correct / $INDEX answered - ${BPURPLE}$percentScore%${RESET}) "
+  echo -e "${BPURPLE}\n\nFinal Score${RESET}: $CORRECT correct / $INDEX answered - ${BPURPLE}$percentScore%${RESET}) " | tee -a ${FILENAME}
 }
 
 getAllQuestions

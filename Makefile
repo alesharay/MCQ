@@ -11,22 +11,27 @@ RESET 	:= \033[0m
 
 A	AWS:	## Start the AWS Certified Cloud Practioner Quiz
 
-	@$(MAKE) load_db COLLECTION=Questions DB_FILE=awsQuestions.json
+	@$(MAKE) --no-print-directory load_db COLLECTION=Questions DB_FILE=awsQuestions.json
 	@clear
 	@./exam.sh
+	@$(MAKE) --no-print-directory drop_db 1>/dev/null 2>&1
 	@exit 0
 
 B	TERRAFORM:	## Start the HashiCorp: Terraform Associate Quiz
 
-	@$(MAKE) load_db COLLECTION=Questions DB_FILE=terraformQuestions.json
+	@$(MAKE) --no-print-directory load_db COLLECTION=Questions DB_FILE=terraformQuestions.json
 	@clear
 	@./exam.sh
+	@$(MAKE) --no-print-directory drop_db 1>/dev/null 2>&1
+	@exit 0
 
 C	AZURE:	## Start the HashiCorp: Azure Fundamentals Quiz
 
-	@$(MAKE) load_db COLLECTION=Questions DB_FILE=azureQuestions.json
+	@$(MAKE) --no-print-directory load_db COLLECTION=Questions DB_FILE=azureQuestions.json
 	@clear
 	@./exam.sh
+	@$(MAKE) --no-print-directory drop_db 1>/dev/null 2>&1
+	@exit 0
 
 #----
 
@@ -66,10 +71,10 @@ dr	install-docker-rhel: config-rhel 	#- Install Docker on RedHat Linux
 
 #----
 
-ld	load_db:	#M Load specified quiz questions into running DB; takes a collection and db file located in the mongo-seed direction (e.g. COLLECTION=<> DB_FILE=<>)
+ld	load_db:	#M Load specified quiz questions into running DB; takes a collection and db file located in the mongo-seed direction (e.g. COLLECTION=... DB_FILE=...)
 	@docker exec -it quiz-mongodb mongoimport --username admin --password admin --uri mongodb://@quiz-mongodb:27017/MCQ?authSource=admin --collection $(COLLECTION) --drop --file mongo-seed/$(DB_FILE) --jsonArray
 
-ldl	load_db_local 	:	#M Load specified quiz questions into running local DB; takes a collection and db file located in the mongo-seed direction (e.g. COLLECTION=<> DB_FILE=<>)
+ldl	load_db_local 	:	#M Load specified quiz questions into running local DB; takes a collection and db file located in the mongo-seed direction (e.g. COLLECTION=... DB_FILE=...)
 	@mongoimport --uri mongodb://localhost:27017/MCQ --collection $(COLLECTION) --drop --file mongo-seed/$(DB_FILE) --jsonArray
 
 #----
@@ -82,10 +87,10 @@ scl	show_collections_local:	#M Show collections for the local MCQ database
 
 #----
 
-mg	mongosh :	#M Run mongosh commands
+mg	mongosh :	#M Run mongosh commands; takes a command parameter (e.g. COMMAND=... )
 	@docker exec quiz-mongodb mongosh quiz-mongodb:27017/MCQ --authenticationDatabase admin --username admin --password admin --eval "${COMMAND}"
 
-mgl	mongosh_local 	:	#M Run local mongosh commands
+mgl	mongosh_local 	:	#M Run local mongosh commands; takes a command parameter (e.g. COMMAND=... )
 	@mongosh localhost:27017/MCQ --eval "${COMMAND}"
 
 #----
@@ -116,7 +121,7 @@ r	run:		# Run the app
 	@./run.sh $$CHOICE
 
 u	usage:		# Show usage message
-
+	@$(MAKE) --no-print-directory mg COMMAND="db.disableFreeMonitoring()" 1>/dev/null
 	@echo
 	@echo usage: ./build [OPTION] | awk -F: '{printf "${RED}${BOLD}%s${RESET} %s\n", $$1, $$2}'
 	@echo

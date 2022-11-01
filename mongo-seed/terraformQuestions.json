@@ -33,7 +33,7 @@
   },
   {
     "id": "5",
-    "question": "A provider configuration block is required in every Terraform configuration.\n\tExample:\n\t\tprovider \"provider_name\"{\n\t\t\t...\n\t\t}",
+    "question": "A provider configuration block is required in every Terraform configuration.\n\tExample:\n\t\tprovider \"provider_name\" {\n\t\t\t...\n\t\t}",
     "options": "\n\tT. True\n\tF. False",
     "answer": "T",
     "explanation": "Reference: https://developer.hashicorp.com/terraform/language/providers/configuration",

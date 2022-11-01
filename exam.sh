@@ -84,7 +84,8 @@ function getAllQuestions() {
     echo "$DOCUMENTS" | \
       jq --argjson index $element '.[$index].question' | \
       sed 's/\\n/\n/g' | \
-      sed 's/\"//g' | \
+      sed 's/\\"/"/g' | \
+      sed 's/\\t/\t/g' | \
       awk -F\\n -v blue=${BLUE} -v reset=${RESET} '{ print blue$1 $2reset; }'
 
     echo "$DOCUMENTS" | \

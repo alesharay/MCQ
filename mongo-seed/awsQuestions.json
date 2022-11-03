@@ -398,5 +398,165 @@
     "answer": "B",
     "explanation": "Reference:",
     "type": "Multiple Choice"
+  },
+  {
+    "id": "51",
+    "question": "Which AWS service uses machine learning to help discover, monitor, and protect sensitive data that is stored in Amazon S3 buckets?",
+    "options": "\n\tA. AWS Shield\n\tB. Amazon Macie\n\tC. AWS Network Firewall\n\tD. Amazon Cognito",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "52",
+    "question": "A company wants to improve the overall availability and performance of its applications that are hosted on AWS.\nWhich AWS service should the company use?",
+    "options": "\n\tA. Amazon Connect\n\tB. Amazon Lightsail\n\tC. AWS Global Accelerator\n\tD. AWS Storage Gateway",
+    "answer": "C",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "53",
+    "question": "Which AWS service or feature identifies whether an Amazon S3 bucket or an IAM role has been shared with an external entity?",
+    "options": "\n\tA. AWS Service Catalog\n\tB. AWS Systems Manager\n\tC. AWS IAM Access Analyzer\n\tD. AWS Organizations",
+    "answer": "C",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "54",
+    "question": "A company does not want to rely on elaborate forecasting to determine its usage of compute resources. Instead, the company wants to pay only for the resources that it uses. The company also needs the ability to increase or decrease its resource usage to meet business requirements.\nWhich pillar of the AWS Well-Architected Framework aligns with these requirements?",
+    "options": "\n\tA. Operational excellence\n\tB. Security\n\tC. Reliability\n\tD. Cost optimization",
+    "answer": "S",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "55",
+    "question": "A company wants to launch its workload on AWS and requires the system to automatically recover from failure.\nWhich pillar of the AWS Well-Architected Framework includes this requirement?",
+    "options": "\n\tA. Cost optimization\n\tB. Operational excellence \n\tC. Performance efficiency\n\tD. Reliability",
+    "answer": "D",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "56",
+    "question": "A large enterprise with multiple VPCs in several AWS Regions around the world needs to connect and centrally manage network connectivity between its VPCs.\nWhich AWS service or feature meets these requirements?",
+    "options": "\n\tA. AWS Direct Connect\n\tB. AWS Transit Gateway\n\tC. AWS Site-to-Site VPN\n\tD. VPC endpoints",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "57",
+    "question": "Which AWS service supports the creation of visual reports from AWS Cost and Usage Report data?",
+    "options": "\n\tA. Amazon Athena\n\tB. Amazon QuickSight\n\tC. Amazon CloudWatch\n\tD. AWS Organizations",
+    "answer": "A",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "58",
+    "question": "Which AWS service should be used to monitor Amazon EC2 instances for CPU and network utilization?",
+    "options": "\n\tA. Amazon Inspector\n\tB. AWS CloudTrail\n\tC. Amazon CloudWatch\n\tD. AWS Config",
+    "answer": "C",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "59",
+    "question": "A company is preparing to launch a new web store that is expected to receive high traffic for an upcoming event. The web store runs only on AWS, and the company has an AWS Enterprise Support plan.\nWhich AWS resource will provide guidance about how the company should scale its architecture and operational support during the event?",
+    "options": "\n\tA. AWS Abuse team\n\tB. The designated AWS technical account manager (TAM)\n\tC. AWS infrastructure event management\n\tD. AWS Professional Services",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "60",
+    "question": "A user wants to deploy a service to the AWS Cloud by using infrastructure-as-code (IaC) principles.\nWhich AWS service can be used to meet this requirement?",
+    "options": "\n\tA. AWS Systems Manager\n\tB. AWS CloudFormation\n\tC. AWS CodeCommit\n\tD. AWS Config",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "61",
+    "question": "A company that has multiple business units wants to centrally manage and govern its AWS Cloud environments. The company wants to automate the creation of AWS accounts, apply service control policies (SCPs), and simplify billing processes.\nWhich AWS service or tool should the company use to meet these requirements?",
+    "options": "\n\tA. AWS Organizations\n\tB. Cost Explorer\n\tC. AWS Budgets\n\tD. AWS Trusted Advisor",
+    "answer": "A",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "62",
+    "question": "Which IT controls do AWS and the customer share, according to the AWS shared responsibility model? [Choose Two]",
+    "options": "\n\tA. Physical and environmental controls\n\tB. Patch management\n\tC. Cloud awareness and training\n\tD. Zone security\n\tE. Application data encryption",
+    "answer": "BC",
+    "explanation": "Reference:",
+    "type": "Multiple Answer"
+  },
+  {
+    "id": "63",
+    "question": "A company is launching an application in the AWS Cloud. The application will use Amazon S3 storage. A large team of researchers will have shared access to the data. The company must be able to recover data that is accidentally overwritten or deleted.\nWhich S3 feature should the company turn on to meet this requirement?",
+    "options": "\n\tA. Server access logging\n\tB. S3 Versioning\n\tC. S3 Lifecycle rules\n\tD. Encryption in transit and at rest",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "64",
+    "question": "A manufacturing company has a critical application that runs at a remote site that has a slow internet connection. The company wants to migrate the workload to AWS. The application is sensitive to latency and interruptions in connectivity. The company wants a solution that can host this application with minimum latency.\nWhich AWS service or feature should the company use to meet these requirements?",
+    "options": "\n\tA. Availability Zones\n\tB. AWS Local Zones\n\tC. AWS Wavelength\n\tD. AWS Outposts",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "65",
+    "question": "A company wants to migrate its applications from its on-premises data center to a VPC in the AWS Cloud. These applications will need to access on-premises resources.\nWhich actions will meet these requirements? (Choose two.)",
+    "options": "\n\tA. Use AWS Service Catalog to identify a list of on-premises resources that can be migrated.\n\tB. Create a VPN connection between an on-premises device and a virtual private gateway in the VPC.\n\tC. Use an Amazon CloudFront distribution and configure it to accelerate content delivery close to the on-premises resources.\n\tD. Set up an AWS Direct Connect connection between the on-premises data center and AWS.\n\tE. Use Amazon CloudFront to restrict access to static web content provided through the on-premises web servers.",
+    "answer": "AD",
+    "explanation": "Reference:",
+    "type": "Multiple Answer"
+  },
+  {
+    "id": "66",
+    "question": "A company wants to use the AWS Cloud to provide secure access to desktop applications that are running in a fully managed environment.\nWhich AWS service should the company use to meet this requirement?",
+    "options": "\n\tA. Amazon S3\n\tB. Amazon AppStream 2.0\n\tC. AWS AppSync\n\tD. AWS Outposts",
+    "answer": "A",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "67",
+    "question": "A company wants to implement threat detection on its AWS infrastructure. However, the company does not want to deploy additional software.\nWhich AWS service should the company use to meet these requirements?",
+    "options": "\n\tA. Amazon VPC\n\tB. Amazon EC2\n\tC. Amazon GuardDuty\n\tD. AWS Direct Connect",
+    "answer": "C",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "68",
+    "question": "Which AWS service uses edge locations?",
+    "options": "\n\tA. Amazon Aurora\n\tB. AWS Global Accelerator\n\tC. Amazon Connect\n\tD. AWS Outposts",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "69",
+    "question": "A company needs to install an application in a Docker container.\nWhich AWS service eliminates the need to provision and manage the container hosts?",
+    "options": "\n\tA. AWS Fargate\n\tB. Amazon FSx for Windows File Server\n\tC. Amazon Elastic Container Service (Amazon ECS)\n\tD. Amazon EC2",
+    "answer": "C",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "70",
+    "question": "Which AWS service or feature checks access policies and offers actionable recommendations to help users set secure and functional policies?",
+    "options": "\n\tA. AWS Systems Manager\n\tB. AWS IAM Access Analyzer\n\tC. AWS Trusted Advisor\n\tD. Amazon GuardDuty",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
   }
 ]

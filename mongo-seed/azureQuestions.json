@@ -425,8 +425,8 @@
   },
   {
     "id": "54",
-    "question": "Match the Azure services benefits to the correct descriptions. (Select the answers in the order of their matches)\n\n\t1. A cloud service that remains available after a failure occurs\n\t2. A cloud service that can be recovered after a failure occurs\n\tA cloud service that performs quickly when demand increases\n\tA cloud service that can be accessed quickly from the internet",
-    "options": "\n\tA. Disaster recovery\n\tFault tolerance\n\tLow latency\n\tDynamic scalability",
+    "question": "Match the Azure services benefits to the correct descriptions. (Select the answers in the order of their matches)\n\n\t1. A cloud service that remains available after a failure occurs\n\t2. A cloud service that can be recovered after a failure occurs\n\t3. A cloud service that performs quickly when demand increases\n\t4. A cloud service that can be accessed quickly from the internet",
+    "options": "\n\tA. Disaster recovery\n\tB. Fault tolerance\n\tC. Low latency\n\tD. Dynamic scalability",
     "explanation": "Reference: https://msdn.microsoft.com/en-us/magazine/mt422582.aspx\nhttps://searchdisasterrecovery.techtarget.com/definition/cloud-disaster-recovery-cloud-DR\nhttp://www.siasmsp.com/the-benefit-of-scalabilityin-cloud-computing-2/ https://azure.microsoft.com/en-in/overview/what-is-cloud-computing/",
     "type": "Match Answer",
     "answer": "BADC"
@@ -434,7 +434,7 @@
   {
     "id": "55",
     "question": "For each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\n(Enter answers Y\\N in order of option)",
-    "options": "\n\n\tY\\N: To implement a hybrid cloud model, a company must have an internal network.\n\tY\\N:A company can extend the computing resources of its internal network by using a hybrid cloud.\n\tY\\N:In a public cloud model, only guest users at your company can access the resources in the cloud",
+    "options": "\n\n\tY\\N: To implement a hybrid cloud model, a company must have an internal network.\n\tY\\N: A company can extend the computing resources of its internal network by using a hybrid cloud.\n\tY\\N: In a public cloud model, only guest users at your company can access the resources in the cloud",
     "explanation": "Reference: https://azure.microsoft.com/en-gb/overview/what-is-hybrid-cloud-computing/",
     "type": "Match Answer",
     "answer": "NYN"
@@ -442,7 +442,7 @@
   {
     "id": "56",
     "question": "For each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\n(Enter answers Y\\N in order of option)",
-    "options": "\n\n\tY\\N: A Platform as a Service (PaaS) solution provides full control of operating systems that host applications.\n\tY\\N:A Platform as a Service (PaaS) solution provides additional memory to apps by changing pricing tiers\n\tY\\N:A Platform as a Service (PaaS) solution can automatically scale the number of instances.",
+    "options": "\n\n\tY\\N: A Platform as a Service (PaaS) solution provides full control of operating systems that host applications.\n\tY\\N: A Platform as a Service (PaaS) solution provides additional memory to apps by changing pricing tiers\n\tY\\N: A Platform as a Service (PaaS) solution can automatically scale the number of instances.",
     "explanation": "Reference:",
     "type": "Match Answer",
     "answer": "NNY"
@@ -458,7 +458,7 @@
   {
     "id": "58",
     "question": "For each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\n(Enter answers Y\\N in order of option)",
-    "options": "\n\n\tY\\N: Azure Pay-As-You-Go pricing is an example of CapEx\n\t\tY\\N: Paying electricity for your datacenter is an example of OpEx\n\tY\\N: Deploying your own datacenter is an example of CapEx",
+    "options": "\n\n\tY\\N: Azure Pay-As-You-Go pricing is an example of CapEx\n\tY\\N: Paying electricity for your datacenter is an example of OpEx\n\tY\\N: Deploying your own datacenter is an example of CapEx",
     "explanation": "Reference: https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/appendix/azure-scaffold",
     "type": "Match Answer",
     "answer": ""
@@ -482,7 +482,7 @@
   {
     "id": "61",
     "question": "Match the cloud model to the correct advantage. (Select the answers in the order of their matches)\n\n\t1. No required capital expenditure\n\t2. Provides complete control over security.\n\t3. Provides a choice to use on-premises or cloud-based resources",
-    "options": "\n\tA. Hybrid Cloud\n\tPrivate Cloud\n\tPublic Cloud",
+    "options": "\n\tA. Hybrid Cloud\n\tB. Private Cloud\n\tC. Public Cloud",
     "explanation": "Reference:",
     "type": "Match Answer",
     "answer": "CBA"
@@ -490,7 +490,7 @@
   {
     "id": "62",
     "question": "For each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\n(Enter answers Y\\N in order of option)",
-    "options": "\n\n\tY\\N: A company can extend a private cloud by adding its own physical servers to the public cloud\n\tT\\N: To build a hybrid cloud, you must deploy resources to the public cloud.\n\tY\\N: A private cloud must be disconnected from the internet.",
+    "options": "\n\n\tY\\N: A company can extend a private cloud by adding its own physical servers to the public cloud\n\tY\\N: To build a hybrid cloud, you must deploy resources to the public cloud.\n\tY\\N: A private cloud must be disconnected from the internet.",
     "explanation": "Reference: https://azure.microsoft.com/en-gb/overview/what-are-private-public-hybrid-clouds/",
     "type": "Match Answer",
     "answer": "NYN"
@@ -530,7 +530,7 @@
   {
     "id": "67",
     "question": "For each of the following statements, select Yes if the statement is true. Otherwise, select No.\n\n(Enter answers Y\\N in order of option)",
-    "options": "\n\n\tY\\N:Building a datacenter infrastructure is an example of operational expenditure (OpEx) costs.\n\tY\\N:Monthly salaries for technical personnel are an example of operational expenditure (OpEx) costs.\n\tY\\N: Leasing software is an example operational expenditure (OpEx) costs.",
+    "options": "\n\n\tY\\N: Building a datacenter infrastructure is an example of operational expenditure (OpEx) costs.\n\tY\\N: Monthly salaries for technical personnel are an example of operational expenditure (OpEx) costs.\n\tY\\N: Leasing software is an example operational expenditure (OpEx) costs.",
     "explanation": "Reference: https://docs.microsoft.com/en-us/azure/cosmos-db/database-security",
     "type": "Match Answer",
     "answer": "NYY"

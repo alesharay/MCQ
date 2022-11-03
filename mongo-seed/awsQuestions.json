@@ -49,7 +49,7 @@
   },
   {
     "id": "7",
-    "question": "Which duties are the responsibility of a company that is using AWS Lambda? (Choose two.)",
+    "question": "Which duties are the responsibility of a company that is using AWS Lambda? [Choose Two]",
     "options": "\n\tA. Security inside of code\n\tB. Selection of CPU resources\n\tC. Patching of operating system\n\tD. Writing and updating code\n\tE. Security of underlying infrastructure",
     "answer": "AD",
     "explanation": "Reference: https://aws.amazon.com/lambda/features/",

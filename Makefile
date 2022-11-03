@@ -3,17 +3,23 @@
 .DEFAULT_GOAL	:=	usage
 
 RED 		:= \033[31m
+GREEN		:= \033[32m
 YELLOW	:= \033[33m
 BLUE		:= \033[36m
 BOLD 		:= \033[1m
 RESET 	:= \033[0m
-
 
 A	AWS:	## Start the AWS Certified Cloud Practioner Quiz
 
 	@$(MAKE) --no-print-directory load_db COLLECTION=Questions DB_FILE=awsQuestions.json
 	@clear
 	@./exam.sh
+	@mv results.txt aws-results.txt
+	@$(MAKE) --no-print-directory drop_db 1>/dev/null 2>&1
+	@echo
+	@echo
+	@echo "Results file created at ${GREEN}${BOLD}aws-results.txt${RESET}"
+	@echo
 	@$(MAKE) --no-print-directory drop_db 1>/dev/null 2>&1
 	@exit 0
 
@@ -22,6 +28,11 @@ B	TERRAFORM:	## Start the HashiCorp: Terraform Associate Quiz
 	@$(MAKE) --no-print-directory load_db COLLECTION=Questions DB_FILE=terraformQuestions.json
 	@clear
 	@./exam.sh
+	@mv results.txt terraform-results.txt
+	@echo
+	@echo
+	@echo "Results file created at ${GREEN}${BOLD}terraform-results.txt${RESET}"
+	@echo
 	@$(MAKE) --no-print-directory drop_db 1>/dev/null 2>&1
 	@exit 0
 
@@ -30,6 +41,11 @@ C	AZURE:	## Start the HashiCorp: Azure Fundamentals Quiz
 	@$(MAKE) --no-print-directory load_db COLLECTION=Questions DB_FILE=azureQuestions.json
 	@clear
 	@./exam.sh
+	@mv results.txt azure-results.txt
+	@echo
+	@echo
+	@echo "Results file created at ${GREEN}${BOLD}azure-results.txt${RESET}"
+	@echo
 	@$(MAKE) --no-print-directory drop_db 1>/dev/null 2>&1
 	@exit 0
 

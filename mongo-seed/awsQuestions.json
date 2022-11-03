@@ -9,7 +9,7 @@
   },
   {
     "id": "2",
-    "question": "Which pillar of AWS Well-Architected Framework referfs to the ability of a system to recover from infrastructure or service disruptions and dynamically acquire computing resources to meet demand?",
+    "question": "Which pillar of AWS Well-Architected Framework refers to the ability of a system to recover from infrastructure or service disruptions and dynamically acquire computing resources to meet demand?",
     "options": "\n\tA. Security\n\tB. Reliability\n\tC. Performance Efficiency\n\tD. Cost Optimization",
     "answer": "B",
     "explanation": "Reference: https://aws.amazon.com/architecture/well-architected/",
@@ -18,7 +18,7 @@
   {
     "id": "3",
     "question": "Which of the following are benefits to migrating to AWS Cloud? [Choose Two]",
-    "options": "\n\tA. Operational resiliance\n\tB. Discounts for products on Amazon.com\n\tC. Business agility\n\tD. Business excellence\n\tE. Increased staff retention",
+    "options": "\n\tA. Operational resilience\n\tB. Discounts for products on Amazon.com\n\tC. Business agility\n\tD. Business excellence\n\tE. Increased staff retention",
     "answer": "AC",
     "explanation": "Reference: https://www.easydeploy.io/blog/benefits-of-aws-migration/",
     "type": "Multiple Answer"
@@ -26,7 +26,7 @@
   {
     "id": "4",
     "question": "A company is planning to replace its physical on-premises compute servers with AWS serverless compute services. The company wants to be able to take advantage of advanced technologies quickly after the migration.\nWhich pillar of the AWS Well-Architected Framework does this plan represent?",
-    "options": ",\n\tA. Security\n\tB. Performance efficiency\n\tC. Operational excellence\n\tD. Reliability",
+    "options": "\n\tA. Security\n\tB. Performance efficiency\n\tC. Operational excellence\n\tD. Reliability",
     "answer": "B",
     "explanation": "Reference: https://aws.amazon.com/architecture/well-architected/",
     "type": "Multiple Choice"
@@ -89,7 +89,7 @@
   },
   {
     "id": "12",
-    "question": "A company wants to migrate a critical application to AWS. The application has a short runtime. The application is invoked by changes in data or by shifts in system state. The company need a compute solution that maximizes operational efficiency and minimizes the cost of running the application.\nWhich AWS solution should the company use to meet these requirements?",
+    "question": "A company wants to migrate a critical application to AWS. The application has a short runtime. The application is invoked by changes in data or by shifts in system state. The company needs a compute solution that maximizes operational efficiency and minimizes the cost of running the application.\nWhich AWS solution should the company use to meet these requirements?",
     "options": "\n\tA. Amazon EC2 On-Demand Instances\n\tB. AWS Lambda\n\tC. Amazon EC2 Reserved Instances\n\tD. Amazon EC2 Spot Instances",
     "answer": "B",
     "explanation": "Reference: https://aws.amazon.com/lambda/features/",
@@ -113,7 +113,7 @@
   },
   {
     "id": "15",
-    "question": "A company is launching an ecommerce application that must always be available. The application will run on Amazon EC2 instances continuously for the next 12 months.\nWhat is the MOST cost-effective instance purchasing option that meets these requirements?",
+    "question": "A company is launching an e-commerce application that must always be available. The application will run on Amazon EC2 instances continuously for the next 12 months.\nWhat is the MOST cost-effective instance purchasing option that meets these requirements?",
     "options": "\n\tA. Spot Instances\n\tB. Savings Plans\n\tC. Dedicated Hosts\n\tD. On-Demand Instances",
     "answer": "B",
     "explanation": "Reference: https://aws.amazon.com/ec2/pricing/",
@@ -196,7 +196,7 @@
     "question": "According to the AWS shared responsibility model, what responsibility does a customer have when using Amazon RDS to host a database?",
     "options": "\n\tA. Manage connections to the database\n\tB. Install Microsoft SQL Server\n\tC. Design encryption-at-rest strategies\n\tD. Apply minor database patches",
     "answer": "A",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://aws.amazon.com/blogs/industries/applying-the-aws-shared-responsibility-model-to-your-gxp-solution/",
     "type": "Multiple Choice"
   },
   {
@@ -316,7 +316,7 @@
     "question": "A company is developing a mobile app that needs a high-performance NoSQL database.\nWhich AWS services could the company use for this database? [Choose Two]",
     "options": "\n\tA. Amazon Aurora\n\tB. Amazon RDS\n\tC. Amazon Redshift\n\tD. Amazon DocumentDB (with MongoDB compatibility)\n\tE. Amazon DynamoDB",
     "answer": "DE",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://aws.amazon.com/nosql/",
     "type": "Multiple Answer"
   },
   {
@@ -348,7 +348,7 @@
     "question": "Which AWS service or feature can be used to create a private connection between an on-premises workload and an AWS Cloud workload?",
     "options": "\n\tA. Amazon Route 53\n\tB. Amazon Macie\n\tC. AWS Direct Connect\n\tD. AWS PrivateLink",
     "answer": "D",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://aws.amazon.com/privatelink/",
     "type": "Multiple Choice"
   },
   {

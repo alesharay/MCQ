@@ -88,21 +88,6 @@ function getRandomNumber() {
   done
 }
 
-## Get a random number that hasn't been seen before as the element to use in the list
-#
-seenElements=""
-function getElement() {
-  local element=`getRandomNumber`
-  formattedElement="'$element '"
-  while [[ $seenElements =~ "$formattedElement" ]]
-  do
-    element=`getRandomNumber`
-    formattedElement="'$element '"
-  done
-  seenElements+="$formattedElement"
-  echo "${element}"
-}
-
 ## Run quiz
 #
 function getAllQuestions() {
@@ -119,17 +104,28 @@ function getAllQuestions() {
   while [[ $INDEX -ne $SIZE ]];
   do
 
-    element=`getElement`
+    # Make sure the random element hadn't been seen yet
+    element=`getRandomNumber`
+    formattedElement="'$element '"
+    while [[ $seenElements =~ "$formattedElement" ]]
+    do
+      element=`getRandomNumber`
+      formattedElement="'$element '"
+    done
+    seenElements+=`echo "$formattedElement"`
+    echo | tee -a ${FILENAME}
+    echo | tee -a ${FILENAME}
+
 
     TOTAL=$(($INDEX+1))
     echo -en "$TOTAL. " | tee -a ${FILENAME}
-
 
     # Display the current question (formatted)
     echo "$DOCUMENTS" | \
       jq --argjson index $element '.[$index].question' | \
       sed 's/\\n/\n/g' | \
       sed 's/\\"/"/g' | \
+      sed 's/\\N/\N/g' | \
       sed 's/\\t/\t/g' | \
       awk -F\\n -v blue=${BLUE} -v reset=${RESET} '{ print blue$1 $2reset; }' | tee -a ${FILENAME}
 
@@ -139,6 +135,7 @@ function getAllQuestions() {
       jq --argjson index $element '.[$index].options' | \
       sed 's/\\n/\n/g' | \
       sed 's/\"//g' | \
+      sed 's/\\N/\N/g' | \
       sed 's/\\t/\t/g' | tee -a ${FILENAME}
     echo | tee -a ${FILENAME}
 
@@ -176,8 +173,6 @@ function getAllQuestions() {
       answer=`echo ${string_array[@]}`
       SELECTION=`sortArray  "${answer}" | sed 's/ //g'`
     fi
-    echo | tee -a ${FILENAME}
-
 
     # Grade the user response to the current question as correct or incorrect
     if [[ "$SELECTION" == "$ANSWER" ]]; then

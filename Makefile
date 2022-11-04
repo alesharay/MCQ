@@ -13,7 +13,7 @@ A	AWS:	## Start the AWS Certified Cloud Practioner Quiz
 
 	@$(MAKE) --no-print-directory load_db COLLECTION=Questions DB_FILE=awsQuestions.json
 	@clear
-	@./exam.sh
+	@./exam.sh q
 	@mv results.txt aws-results.txt
 	@$(MAKE) --no-print-directory drop_db 1>/dev/null 2>&1
 	@echo
@@ -27,7 +27,7 @@ B	TERRAFORM:	## Start the HashiCorp: Terraform Associate Quiz
 
 	@$(MAKE) --no-print-directory load_db COLLECTION=Questions DB_FILE=terraformQuestions.json
 	@clear
-	@./exam.sh
+	@./exam.sh q
 	@mv results.txt terraform-results.txt
 	@echo
 	@echo
@@ -40,7 +40,7 @@ C	AZURE:	## Start the HashiCorp: Azure Fundamentals Quiz
 
 	@$(MAKE) --no-print-directory load_db COLLECTION=Questions DB_FILE=azureQuestions.json
 	@clear
-	@./exam.sh
+	@./exam.sh q
 	@mv results.txt azure-results.txt
 	@echo
 	@echo

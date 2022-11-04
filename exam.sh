@@ -178,7 +178,7 @@ function getAllQuestions() {
     if [[ "$TYPE" == "MULTIPLE ANSWER" ]]; then
       string_array=(`stringToArray "$SELECTION"`)
       answer=`echo ${string_array[@]}`
-      SELECTION=`sortArray  "${answer}" | sed 's/ //g'`
+      SELECTION=`sortArray "${answer}" | sed 's/ //g'`
     fi
 
     # Grade the user response to the current question as correct or incorrect
@@ -210,4 +210,29 @@ function getAllQuestions() {
   echo -e "${BPURPLE}\n\nFinal Score${RESET}: $CORRECT correct / $INDEX answered - ${BPURPLE}$percentScore%${RESET}) " | tee -a ${FILENAME}
 }
 
-getAllQuestions
+
+case $1 in
+  ja|JA|join)
+    joinArray $2 $3
+    ;;
+  sta|STA)
+    stringToArray $2
+    ;;
+  sa|SA|sort)
+    sortArray $2
+    ;;
+  gn|GN|getNums)
+    if [[ "$2" == "aws" ]]; then
+      make ld COLLECTION="Questions" DB_FILE="awsQuestions.json" 1>/dev/null ; getNums
+    elif [[ "$2" == "azure" ]]; then
+      make ld COLLECTION="Questions" DB_FILE="azureQuestions.json" 1>/dev/null ; getNums
+    elif [[ "$2" == "terraform" ]]; then
+      make ld COLLECTION="Questions" DB_FILE="terraformQuestions.json" 1>/dev/null ; getNums
+    fi
+    ;;
+  grn|GRN|getRandomNumber)
+    getRandomNumber
+    ;;
+  *)
+    getAllQuestions
+esac

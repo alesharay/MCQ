@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+
+# e - script exits on error (return != 0)
+# u - error if undefined/unbound variable
+# o pipefail - script fails if any piped command fails
+set -euo pipefail
+
 # mongosh --username admin --password admin --authenticationDatabase=admin
 RESET='\033[0m'           # Text Reset
 
@@ -101,6 +107,7 @@ function getAllQuestions() {
   CORRECT=0
 
   TOTAL=0
+  seenElements=""
   while [[ $INDEX -ne $SIZE ]];
   do
 

@@ -33,9 +33,8 @@ cd MCQ/
 ```
 
 <u>linux (ubuntu 22.04)</u>
-```linux
-sudo ./config-linux.sh
-```
+
+*Use the **config-install.sh** script to configure linux*
 <br><br>
 ## Build
 ### <u>*maclinux*</u>

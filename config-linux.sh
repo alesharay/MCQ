@@ -28,7 +28,7 @@ sudo apt update
 
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
-sudo service docker start
+udo systemctl enable --now docker.service
 
 sudo docker run hello-world
 

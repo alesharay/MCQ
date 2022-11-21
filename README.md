@@ -1,4 +1,4 @@
-# PROJECT_NAME
+# MCQ
 
 Multiple Choice Quizzes (MCQ) is a collection of tech certification practice exams of the multiple choice type.
 
@@ -10,21 +10,43 @@ The collection currently consists of the following exams:
 More exams to come
 <br><br>
 ## REQUIREMENTS
-
+- [tar][7]
+- [git][6]
+- [gradle][9]
 - [Docker][1]
 - [Docker Compose][2]
 - [jq][3]
 - [yq][4]
+- [.env][8]
 <br><br>
-## Build
-
+## Install
 *So far, this project on builds on Unix systems. (Windows coming soon)*
 
-### <u>*mac/linux*</u>
+<u>mac</u>
+```mac
+brew install git wget tar jq yq gradle docker docker-compose docker-desktop
+
+# start docker desktop
+
+git clone https://github.com/alesharay/MCQ.git
+cd MCQ/
+```
+
+<u>linux (ubuntu 22.04)</u>
+```linux
+sudo ./install.sh
+```
+<br><br>
+## Build
+### <u>*maclinux*</u>
 Use the package manager [dnf](https://fedoraproject.org/wiki/DNF) to install foobar.
 
 ```bash
-./build
+# use sample.env to create .env file
+
+# if linux, run sudo with the following command
+
+./build.sh
 ```
 <br><br>
 ## Usage
@@ -92,3 +114,7 @@ Please make sure to update tests as appropriate.
 [3]: https://stedolan.github.io/jq/
 [4]: https://github.com/mikefarah/yq
 [5]: https://github.com/kward/shunit2
+[6]: https://git-scm.com
+[7]: https://www.gnu.org/software/tar/
+[8]: sample.env
+[9]: https://gradle.org/

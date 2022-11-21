@@ -11,9 +11,17 @@ echo
 echo "Waiting for containers to be fully up and running..."
 echo
 
-until [[ "`docker logs mcq-quizzes-1 | grep Local | awk '{ print $1 }'`" == "Local:" ]]; do
-    sleep 0.1;
-done;
+
+if [[ $OSTYPE == 'linux-gnu' ]]; then
+    until [[ "`sudo docker logs mcq_quizzes_1 | grep Local | awk '{ print $1 }'`" == "Local:" ]]; do
+        sleep 0.1;
+    done;
+else
+    until [[ "`docker logs mcq-quizzes-1 | grep Local | awk '{ print $1 }'`" == "Local:" ]]; do
+        sleep 0.1;
+    done;
+fi
+
 
 make --no-print-directory run CHOICE=${RESPONSE}
 

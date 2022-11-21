@@ -1,19 +1,77 @@
+# PROJECT_NAME
 
+Multiple Choice Quizzes (MCQ) is a collection of tech certification practice exams of the multiple choice type.
 
+The collection currently consists of the following exams:
+* AWS
+* Azure
+* Terraform
+
+More exams to come
+<br><br>
 ## REQUIREMENTS
 
 - [Docker][1]
 - [Docker Compose][2]
 - [jq][3]
 - [yq][4]
+<br><br>
+## Build
 
-## TEST REQUIREMENTS
+*So far, this project on builds on Unix systems. (Windows coming soon)*
 
-- [shunit2][5]
+### <u>*mac/linux*</u>
+Use the package manager [dnf](https://fedoraproject.org/wiki/DNF) to install foobar.
+
+```bash
+./build
+```
+<br><br>
+## Usage
+
+```bash
+usage  ./build [OPTION]
 
 
+QUIZZES:
+A	AWS                     Start the AWS Certified Cloud Practioner Quiz
+B	TERRAFORM               Start the HashiCorp: Terraform Associate Quiz
+C	AZURE                   Start the HashiCorp: Azure Fundamentals Quiz
 
+MONGO OPTIONS:
+dc	drop_collection        Show collections for the MCQ database
+dcl	drop_collection_local  Show collections for the local MCQ database
+dd	drop_db                Drop the MCQ database
+ddl	drop_db_local 	       Drop the local MCQ database
+ld	load_db                Load specified quiz questions into running DB; takes a collection and db file located in the mongo-seed direction (e.g. COLLECTION=... DB_FILE=...)
+ldl	load_db_local 	       Load specified quiz questions into running local DB; takes a collection and db file located in the mongo-seed direction (e.g. COLLECTION=... DB_FILE=...)
+mg	mongosh                Run mongosh commands; takes a command parameter (e.g. COMMAND=... )
+mgl	mongosh_local 	       Run local mongosh commands; takes a command parameter (e.g. COMMAND=... )
+sc	show_collections       Show collections for the MCQ database
+scl	show_collections_local Show collections for the local MCQ database
 
+CONFIGURATIONS:
+cr	config-rhel            Configure RHEL8 server/container
+cu	config-ubuntu          Configure Ubuntu server/container
+dr	install-docker-rhel    Install Docker on RedHat Linux
+du	install-docker-ubuntu  Install Docker on Ubuntu
+
+ADDITIONAL OPTIONS
+cm	config-menu   	        List config options
+h	help                    Show the help (OPTIONS) menu
+mo 	mongo-options	        List config options
+q	quizzes                 List all available quizzes
+r	run                     Run the app
+u	usage                   Show usage message
+```
+<br><br>
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+<br><br>
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
 
 
 

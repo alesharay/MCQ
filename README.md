@@ -34,7 +34,7 @@ cd MCQ/
 
 <u>linux (ubuntu 22.04)</u>
 ```linux
-sudo ./install.sh
+sudo ./config-linux.sh
 ```
 <br><br>
 ## Build

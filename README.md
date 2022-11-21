@@ -20,30 +20,22 @@ More exams to come
 - [.env][8]
 <br><br>
 ## Install
-*So far, this project on builds on Unix systems. (Windows coming soon)*
+*So far, this project only builds on mac. (Windows and Linux coming soon)*
 
 <u>mac</u>
 ```mac
-brew install git wget tar jq yq gradle docker docker-compose docker-desktop
+brew install git wget tar jq yq gradle docker-compose 
+brew install --cask docker
 
 # start docker desktop
 
 git clone https://github.com/alesharay/MCQ.git
 cd MCQ/
 ```
-
-<u>linux (ubuntu 22.04)</u>
-
-*Use the **config-install.sh** script to configure linux*
 <br><br>
 ## Build
-### <u>*maclinux*</u>
-Use the package manager [dnf](https://fedoraproject.org/wiki/DNF) to install foobar.
-
 ```bash
-# use sample.env to create .env file
-
-# if linux, run sudo with the following command
+# use sample.env to create .env file in root of MCQ/ directory
 
 ./build.sh
 ```

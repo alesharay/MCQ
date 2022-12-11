@@ -367,4 +367,12 @@
     "explanation": "Reference: https://developer.hashicorp.com/terraform/language/meta-arguments/depends_on",
     "type": "Fill in the blank"
   }
+  // {
+  //   "id": "46",
+  //   "question": "You need to specify a dependency manually.\nWhat resource meta-parameter can you use to make sure Terraform respects the dependency? [fill in the blank]",
+  //   "options": "",
+  //   "answer": "depends_on",
+  //   "explanation": "Reference: https://developer.hashicorp.com/terraform/language/meta-arguments/depends_on",
+  //   "type": "Fill in the blank"
+  // },
 ]

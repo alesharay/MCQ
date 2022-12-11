@@ -1,6 +1,7 @@
 version: "3.3"
 services:
   quiz-mongodb:
+    platform: linux/amd64
     container_name: quiz-mongodb
     volumes:
       - "mongodb_data_container:/data/db"
@@ -18,6 +19,7 @@ services:
     env_file:
       - .env
   quizzes:
+    platform: linux/amd64
     privileged: true
     volumes:
       - .:/app"

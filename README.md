@@ -15,6 +15,7 @@ More exams to come
 - [gradle][9]
 - [Docker][1]
 - [Docker Compose][2]
+- [mongodb service][10]
 - [jq][3]
 - [yq][4]
 - [.env][8]
@@ -24,15 +25,24 @@ More exams to come
 
 <u>mac</u>
 ```mac
-brew install git wget tar jq yq gradle docker-compose 
+brew install git wget tar jq yq gradle docker-compose mongodb-community
 brew install --cask docker
+
+# start mongodb service
+
+brew services start mongodb-community
 
 # start docker desktop
 
 git clone https://github.com/alesharay/MCQ.git
 cd MCQ/
+
+# confirm the gradle wrapper is updated
+
+gradle wrapper
 ```
 <br><br>
+
 ## Build
 ```bash
 # use sample.env to create .env file in root of MCQ/ directory
@@ -109,3 +119,4 @@ Please make sure to update tests as appropriate.
 [7]: https://www.gnu.org/software/tar/
 [8]: sample.env
 [9]: https://gradle.org/
+[10]: mongodb.com/docs/manual/installation/

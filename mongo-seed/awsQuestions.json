@@ -427,7 +427,7 @@
     "id": "54",
     "question": "A company does not want to rely on elaborate forecasting to determine its usage of compute resources. Instead, the company wants to pay only for the resources that it uses. The company also needs the ability to increase or decrease its resource usage to meet business requirements.\nWhich pillar of the AWS Well-Architected Framework aligns with these requirements?",
     "options": "\n\tA. Operational excellence\n\tB. Security\n\tC. Reliability\n\tD. Cost optimization",
-    "answer": "S",
+    "answer": "D",
     "explanation": "Reference:",
     "type": "Multiple Choice"
   },
@@ -555,6 +555,246 @@
     "id": "70",
     "question": "Which AWS service or feature checks access policies and offers actionable recommendations to help users set secure and functional policies?",
     "options": "\n\tA. AWS Systems Manager\n\tB. AWS IAM Access Analyzer\n\tC. AWS Trusted Advisor\n\tD. Amazon GuardDuty",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "71",
+    "question": "A company has a fleet of cargo ships. The cargo ships have sensors that collect data at sea, where there is intermittent or no internet connectivity. The company needs to collect, format, and process the data at sea and move the data to AWS later.\nWhich AWS service should the company use to meet these requirements?",
+    "options": "\n\tA. AWS IoT Core\n\tB. Amazon Lightsail\n\tC. AWS Storage Gateway\n\tD. AWS Snowball Edge",
+    "answer": "D",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "72",
+    "question": "A retail company needs to build a highly available architecture for a new ecommerce platform. The company is using only AWS services that replicate data across multiple Availability Zones.\nWhich AWS services should the company use to meet this requirement? [Choose Two]",
+    "options": "\n\tA. Amazon EC2\n\tB. Amazon Elastic Block Store (EBS)\n\tC. Amazon Aurora\n\tD. Amazon DynamoDB\n\tE. Amazon Redshift",
+    "answer": "CD",
+    "explanation": "Reference:",
+    "type": "Multiple Answer"
+  },
+  {
+    "id": "73",
+    "question": "Which characteristic of the AWS Cloud helps users eliminate underutilized CPU capacity?",
+    "options": "\n\tA. Agility\n\tB. Elasticity\n\tC. Reliability\n\tD. Durability",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "74",
+    "question": "Service control policies (SCPs) manage permissions for which of the following?",
+    "options": "\n\tA. Availability Zones\n\tB. AWS Regions\n\tC. AWS Organizations\n\tD. Edge Locations",
+    "answer": "C",
+    "explanation": "Reference: https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html",
+    "type": "C"
+  },
+  {
+    "id": "75",
+    "question": "Which AWS service can be used to encrypt data at rest?",
+    "options": "\n\tA. Amazon GuardDuty\n\tB. AWS Shield\n\tC. AWS Security Hub\n\tD. AWS Key Management Service (KMS)",
+    "answer": "D",
+    "explanation": "Reference: https://aws.amazon.com/blogs/security/how-to-protect-data-at-rest-with-amazon-ec2-instance-store-encryption/",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "76",
+    "question": "Which characteristics are advantages of using the AWS Cloud? [Choose Two]",
+    "options": "\n\tA. A 100% service level agreement (SLA) for all AWS services\n\tB. Compute capacity that is adjusted on demand\n\tC. Availability of AWS Support for code development\n\tD. Enhanced security\n\tE. Increases in cost and complexity",
+    "answer": "BD",
+    "explanation": "Reference: https://intellipaat.com/blog/aws-benefits-and-drawbacks/",
+    "type": "Multiple Answer"
+  },
+  {
+    "id": "77",
+    "question": "A user is storing objects in Amazon S3. The user needs to restrict access to the objects to meet compliance obligations.\nWhat should the user do to meet this requirement?",
+    "options": "\n\tA. Use AWS Secrets Manager.\n\tB. Tag the objects in the S3 bucket.\n\tC. Use security groups.\n\tD. Use network ACLs.",
+    "answer": "D",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "78",
+    "question": "A company wants to convert video files and audio files from their source format into a format that will play on smartphones, tablets, and web browsers.\nWhich AWS service will meet these requirements?",
+    "options": "\n\tA. Amazon Elastic Transcoder\n\tB. Amazon Comprehend\n\tC. AWS Glue\n\tD. Amazon Rekognition",
+    "answer": "A",
+    "explanation": "Reference: https://aws.amazon.com/elastictranscoder/",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "79",
+    "question": "Which of the following are benefits of Amazon EC2 Auto Scaling? [Choose Two]",
+    "options": "\n\tA. Improved health and availability of applications\n\tB. Reduced network latency\n\tC. Optimized performance and costs\n\tD. Automated snapshots of data\n\tE. Cross-Region Replication",
+    "answer": "AC",
+    "explanation": "Reference:",
+    "type": "Multiple Answer"
+  },
+  {
+    "id": "80",
+    "question": "A company has several departments. Each department has its own AWS accounts for its applications. The company wants all AWS costs on a single invoice to simplify payment, but the company wants to know the costs that each department is incurring.\nWhich AWS tool or feature will provide this functionality?",
+    "options": "\n\tA. AWS Cost and Usage Reports\n\tB. Consolidated billing\n\tC. Savings Plans\n\tD. AWS Budgets",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "81",
+    "question": "A company runs its workloads on premises. The company wants to forecast the cost of running a large application on AWS.\nWhich AWS service or tool can the company use to obtain this information?",
+    "options": "\n\tA. AWS Pricing Calculator\n\tB. AWS Budgets\n\tC. AWS Trusted Advisor\n\tD. Cost Explorer",
+    "answer": "A",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "82",
+    "question": "A company wants to eliminate the need to guess infrastructure capacity before deployments. The company also wants to spend its budget on cloud resources only as the company uses the resources.\nWhich advantage of the AWS Cloud matches the company's requirements?",
+    "options": "\n\tA. Reliability\n\tB. Global reach\n\tC. Economies of scale\n\tD. Pay-as-you-go pricing",
+    "answer": "D",
+    "explanation": "Reference: https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "83",
+    "question": "Which AWS service supports a hybrid architecture that gives users the ability to extend AWS infrastructure, AWS services, APIs, and tools to data centers, co-location environments, or on-premises facilities?",
+    "options": "\n\tA. AWS Snowmobile\n\tB. AWS Local Zones\n\tC. AWS Outposts\n\tD. AWS Fargate",
+    "answer": "C",
+    "explanation": "Reference: https://aws.amazon.com/outposts/",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "84",
+    "question": "A company has a physical tape library to store data backups. The tape library is running out of space. The company needs to extend the tape library's capacity to the AWS Cloud.\nWhich AWS service should the company use to meet this requirement?",
+    "options": "\n\tA. Amazon Elastic Block Store (EBS)\n\tB. Amazon S3\n\tC. Amazon Elastic File System (EFS)\n\tD. AWS Storage Gateway",
+    "answer": "D",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "85",
+    "question": "An online retail company has seasonal sales spikes several times a year, primarily around holidays. Demand is lower at other times. The company finds it difficult to predict the increasing infrastructure demand for each season.\nWhich advantages of moving to the AWS Cloud would MOST benefit the company? [Choose Two]",
+    "options": "\n\tA. Global footprint\n\tB. Elasticity\n\tC. AWS service quotas\n\tD. AWS shared responsibility model\n\tE. Pay-as-you-go pricing",
+    "answer": "BE",
+    "explanation": "Reference: https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+    "type": "Multiple Answer"
+  },
+  {
+    "id": "86",
+    "question": "Which AWS service can be used to turn text into lifelike speech?",
+    "options": "\n\tA. Amazon Polly\n\tB. Amazon Kendra\n\tC. Amazon Rekognition\n\tD. Amazon Connect",
+    "answer": "A",
+    "explanation": "Reference: https://aws.amazon.com/polly/?p=ft&c=ml&z=3",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "87",
+    "question": "Which AWS service or tool can be used to capture information about inbound and outbound traffic in an Amazon VPC?",
+    "options": "\n\tA. VPC Flow Logs\n\tB. Amazon Inspector\n\tC. VPC endpoint services\n\tD. NAT gateway",
+    "answer": "A",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "88",
+    "question": "A company wants to ensure that two Amazon EC2 instances are in separate data centers with minimal communication latency between the data centers.\nHow can the company meet this requirement?",
+    "options": "\n\tA. Place the EC2 instances in two separate AWS Regions connected with a VPC peering connection.\n\tB. Place the EC2 instances in two separate Availability Zones within the same AWS Region.\n\tC. Place one EC2 instance on premises and the other in an AWS Region. Then connect them by using an AWS VPN connection.\n\tD. Place both EC2 instances in a placement group for dedicated bandwidth.",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "89",
+    "question": "In which situations should a company create an IAM user instead of an IAM role? [Choose Two]",
+    "options": "\n\tA. When an application that runs on Amazon EC2 instances requires access to other AWS services\n\tB. When the company creates AWS access credentials for individuals\n\tC. When the company creates an application that runs on a mobile phone that makes requests to AWS\n\tD. When the company needs to add users to IAM groups\n\tE. When users are authenticated in the corporate network and want to be able to use AWS without having to sign in a second time",
+    "answer": "BD",
+    "explanation": "Reference:",
+    "type": "Multiple Answer"
+  },
+  {
+    "id": "90",
+    "question": "Which AWS services should a company use to read and write data that changes frequently? [Choose Two]",
+    "options": "\n\tA. Amazon S3 Glacier\n\tB. Amazon RDS\n\tC. AWS Snowball\n\tD. Amazon Redshift\n\tE. Amazon Elastic File System (EFS)",
+    "answer": "BE",
+    "explanation": "Reference:",
+    "type": "Multiple Answer"
+  },
+  {
+    "id": "91",
+    "question": "Which AWS service is used to provide encryption for Amazon EBS?",
+    "options": "\n\tA. AWS Certificate Manager\n\tB. AWS Systems Manager\n\tC. AWS KMS\n\tD. AWS Config",
+    "answer": "C",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "92",
+    "question": "Which AWS services make use of global edge locations? (Choose two.)",
+    "options": "\n\tA. AWS Fargate\n\tB. Amazon CloudFront\n\tC. AWS Global Accelerator\n\tD. AWS Wavelength\n\tE. Amazon VPC",
+    "answer": "BC",
+    "explanation": "Reference:",
+    "type": "Multiple Answer"
+  },
+  {
+    "id": "93",
+    "question": "A company is operating several factories where it builds products. The company needs the ability to process data, store data, and run applications with local system interdependencies that require low latency.\nWhich AWS service should the company use to meet these requirements?",
+    "options": "\n\tA. AWS IoT Greengrass\n\tB. AWS Lambda\n\tC. AWS Outposts\n\tD. AWS Snowball Edge",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "94",
+    "question": "Which of the following is a recommended design principle for AWS Cloud architecture?",
+    "options": "\n\tA. Design tightly coupled components.\n\tB. Build a single application component that can handle all the application functionality.\n\tC. Make large changes on fewer iterations to reduce chances of failure.\n\tD. Avoid monolithic architecture by segmenting workloads.",
+    "answer": "C",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "95",
+    "question": "A company is designing its AWS workloads so that components can be updated regularly and so that changes can be made in small, reversible increments.\nWhich pillar of the AWS Well-Architected Framework does this design support?",
+    "options": "\n\tA. Security\n\tB. Performance efficiency\n\tC. Operational excellence\n\tD. Reliability",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "96",
+    "question": "Which of the following acts as an instance-level firewall to control inbound and outbound access?",
+    "options": "\n\tA. Network access control list\n\tB. Security groups\n\tC. AWS Trusted Advisor\n\tD. Virtual private gateways",
+    "answer": "B",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "97",
+    "question": "A company has a workload that will run continuously for 1 year. The workload cannot tolerate service interruptions.\nWhich Amazon EC2 purchasing option will be MOST cost-effective?",
+    "options": "\n\tA. All Upfront Reserved Instances\n\tB. Partial Upfront Reserved Instances\n\tC. Dedicated Instances\n\tD. On-Demand Instances",
+    "answer": "A",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "98",
+    "question": "Which AWS service helps protect against DDoS attacks?",
+    "options": "\n\tA. AWS Shield\n\tB. Amazon Inspector\n\tC. Amazon GuardDuty\n\tD. Amazon Detective",
+    "answer": "A",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "99",
+    "question": "Using AWS Config to record, audit, and evaluate changes to AWS resources to enable traceability is an example of which AWS Well-Architected Framework pillar?",
+    "options": "\n\tA. Security\n\tB. Operational excellence\n\tC. Performance efficiency\n\tD. Cost optimization",
+    "answer": "A",
+    "explanation": "Reference:",
+    "type": "Multiple Choice"
+  },
+  {
+    "id": "100",
+    "question": "Which AWS tool or feature acts as a VPC firewall at the subnet level?",
+    "options": "\n\tA. Security group\n\tB. Network ACL\n\tC. Traffic Mirroring\n\tD. Internet gateway",
     "answer": "B",
     "explanation": "Reference:",
     "type": "Multiple Choice"

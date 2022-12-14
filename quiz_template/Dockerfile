@@ -1,6 +1,4 @@
 FROM ubuntu:22.04
-RUN apt update -y ; apt upgrade -y
-RUN DEBIAN_FRONTEND=noninteractive apt install -y make openjdk-18-jdk-headless
 EXPOSE 8102
 ADD . /quiz
 WORKDIR /quiz

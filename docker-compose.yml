@@ -15,7 +15,7 @@ services:
       mcq:
         ipv4_address: 172.16.0.1
     command: mongod --bind_ip 127.0.0.1,172.16.0.1
-    image: mongo:latest
+    image: mongo:4.4.6
     env_file:
       - .env
   quizzes:
@@ -23,7 +23,7 @@ services:
     privileged: true
     volumes:
       - .:/app"
-    image: alesharay100/quizzes:v1.0
+    image: alesharay100/quizzes:v2.0
     ports:
       - "8102:8102"
     networks:

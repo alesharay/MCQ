@@ -513,7 +513,7 @@
   },
   {
     "id": "65",
-    "question": "A company wants to migrate its applications from its on-premises data center to a VPC in the AWS Cloud. These applications will need to access on-premises resources.\nWhich actions will meet these requirements? (Choose two.)",
+    "question": "A company wants to migrate its applications from its on-premises data center to a VPC in the AWS Cloud. These applications will need to access on-premises resources.\nWhich actions will meet these requirements? [Choose Two]",
     "options": "\n\tA. Use AWS Service Catalog to identify a list of on-premises resources that can be migrated.\n\tB. Create a VPN connection between an on-premises device and a virtual private gateway in the VPC.\n\tC. Use an Amazon CloudFront distribution and configure it to accelerate content delivery close to the on-premises resources.\n\tD. Set up an AWS Direct Connect connection between the on-premises data center and AWS.\n\tE. Use Amazon CloudFront to restrict access to static web content provided through the on-premises web servers.",
     "answer": "AD",
     "explanation": "Reference:",
@@ -729,7 +729,7 @@
   },
   {
     "id": "92",
-    "question": "Which AWS services make use of global edge locations? (Choose two.)",
+    "question": "Which AWS services make use of global edge locations? [Choose Two]",
     "options": "\n\tA. AWS Fargate\n\tB. Amazon CloudFront\n\tC. AWS Global Accelerator\n\tD. AWS Wavelength\n\tE. Amazon VPC",
     "answer": "BC",
     "explanation": "Reference:",

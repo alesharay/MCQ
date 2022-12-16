@@ -2,7 +2,7 @@
 
 sudo apt update -y ; sudo apt upgrade -y
 
-sudo apt install -y tar git-all jq gradle docker-compose
+sudo apt install -y tar git-all jq maven docker-compose
 
 sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && sudo chmod +x /usr/bin/yq
 

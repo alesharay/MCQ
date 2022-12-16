@@ -12,7 +12,7 @@ More exams to come
 ## REQUIREMENTS
 - [tar][7]
 - [git][6]
-- [gradle][9]
+- [maven][9]
 - [Docker][1]
 - [Docker Compose][2]
 - [mongodb service][10]
@@ -25,7 +25,7 @@ More exams to come
 
 <u>mac</u>
 ```mac
-brew install git wget tar jq yq gradle docker-compose mongodb-community
+brew install git wget tar jq yq maven docker-compose mongodb-community
 brew install --cask docker
 
 # start mongodb service
@@ -37,9 +37,9 @@ brew services start mongodb-community
 git clone https://github.com/alesharay/MCQ.git
 cd MCQ/
 
-# confirm the gradle wrapper is updated
+# confirm the maven wrapper is updated
 
-gradle wrapper
+mvn wrapper:wrapper
 ```
 <br><br>
 
@@ -118,5 +118,5 @@ Please make sure to update tests as appropriate.
 [6]: https://git-scm.com
 [7]: https://www.gnu.org/software/tar/
 [8]: sample.env
-[9]: https://gradle.org/
+[9]: https://maven.apache.org/what-is-maven.html
 [10]: mongodb.com/docs/manual/installation/

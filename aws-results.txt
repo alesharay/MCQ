@@ -1,0 +1,16 @@
+[0;33m100 Questions Total[0m
+
+
+
+1. [0;34m"Which AWS services make use of global edge locations? (Choose two.)"[0m
+
+	A. AWS Fargate
+	B. Amazon CloudFront
+	C. AWS Global Accelerator
+	D. AWS Wavelength
+	E. Amazon VPC
+
+
+[1;35m
+
+Final Score[0m: 0 correct / 0 answered - [1;35m0%[0m) 

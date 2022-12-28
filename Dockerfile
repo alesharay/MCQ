@@ -1,5 +1,4 @@
-FROM ubuntu:22.04
-
+FROM alesharay100/quizzes:v2.0
 ADD . /app
 WORKDIR /app
 ARG choice

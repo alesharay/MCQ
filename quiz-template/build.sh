@@ -6,7 +6,7 @@ COMPOSE_DOCKER_CLI_BUILD=1 \
 DOCKER_BUILDKIT=1 \
 BUILDKIT_INLINE_CACHE=1 \
 DOCKER_DEFAULT_PLATFORM=linux/amd64 \
-0
+
 case $CHANGES_MADE in
     y|yes)
       docker buildx create --use

@@ -1,11 +1,20 @@
 #!/usr/bin/env bash
 
+BUILD_UNDETACHED=$1
 
 COMPOSE_DOCKER_CLI_BUILD=1 \
 DOCKER_BUILDKIT=1 \
 BUILDKIT_INLINE_CACHE=1 \
 DOCKER_DEFAULT_PLATFORM=linux/amd64 \
-docker-compose up -d --build
+
+case $BUILD_DETACHED in
+	y|yes)
+		docker-compose up --build
+		;;
+	*)
+		docker-compose up -d --build
+		;;
+esac
 
 echo
 echo "Waiting for containers to be fully up and running..."

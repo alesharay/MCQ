@@ -1,6 +1,6 @@
-FROM alesharay100/quizzes:v2.0
+FROM ubuntu:22.04
 RUN apt update -y ; apt upgrade -y
-# RUN DEBIAN_FRONTEND=noninteractive apt install -y make maven openjdk-18-jdk-headless
+RUN DEBIAN_FRONTEND=noninteractive apt install -y make maven openjdk-18-jdk-headless
 EXPOSE 8102
 ADD . /quiz
 WORKDIR /quiz

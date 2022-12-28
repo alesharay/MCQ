@@ -76,7 +76,7 @@
     "question": "A user is comparing purchase options for an application that runs on Amazon EC2 and Amazon RDS. The application cannot sustain any interruption. The application experiences a predictable amount of usage including some seasonal spikes that last only a few weeks at a time. It is not possible to modify the application.\nWhich purchase option meets these requirements MOST cost-effectively?",
     "options": "\n\tA. Review the AWS Marketplace and buy Partial Upfront Reserved Instances to cover the predicted and seasonal load.\n\tB. Buy Reserved Instances for the predicted amount of usage throughout the year. Allow any seasonal usage to run on Spot Instances.\n\tC. Buy Reserved Instances for the predicted amount of usage throughout the year. Allow any seasonal usage to run at an On-Demand rate.\n\tD. Buy Reserved Instances to cover all potential usage that results from the seasonal usage.",
     "answer": "C",
-    "explanation": "Reference: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances",
+    "explanation": "Reference: https://aws.amazon.com/ec2/pricing/on-demand/",
     "type": "Multiple Choice"
   },
   {
@@ -140,7 +140,7 @@
     "question": "Which AWS service or tool should a company use to centrally request and track service limit increases?",
     "options": "\n\tA. AWS Config\n\tB. Service Quotas\n\tC. AWS Service Catalog\n\tD. AWS Budgets",
     "answer": "B",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html",
     "type": "Multiple Choice"
   },
   {
@@ -180,7 +180,7 @@
     "question": "Which of the following are components of an AWS Site-to-Site VPN connection? [Choose Two]",
     "options": "\n\tA. AWS Storage Gateway\n\tB. Virtual private gateway\n\tC. NAT gateway\n\tD. Internet gateway",
     "answer": "BD",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://docs.aws.amazon.com/vpn/latest/s2svpn/how_it_works.html",
     "type": "Multiple Answer"
   },
   {
@@ -212,7 +212,7 @@
     "question": "A user needs to determine whether an Amazon EC2 instance's security groups were modified in the last month.\nHow can the user see if a change was made?",
     "options": "\n\tA. Use Amazon EC2 to see if the security group was changed.\n\tB. Use AWS Identity and Access Management (IAM) to see which user or role changed the security group.\n\tC. Use AWS CloudTrail to see if the security group was changed.\n\tD. Use Amazon CloudWatch to see if the security group was changed.",
     "answer": "C",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html",
     "type": "Multiple Choice"
   },
   {
@@ -220,7 +220,7 @@
     "question": "Which AWS service will help protect applications running on AWS from DDoS attacks?",
     "options": "\n\tA. Amazon GuardDuty\n\tB. AWS WAF\n\tC. AWS Shield\n\tD. Amazon Inspector",
     "answer": "C",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://aws.amazon.com/shield/",
     "type": "Multiple Choice"
   },
   {
@@ -228,7 +228,7 @@
     "question": "Which AWS service or feature acts as a firewall for Amazon EC2 instances?",
     "options": "\n\tA. Network ACL\n\tB. Elastic network interface\n\tC. Amazon VPC\n\tD. Security group",
     "answer": "D",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html",
     "type": "Multiple Choice"
   },
   {
@@ -251,8 +251,8 @@
     "id": "32",
     "question": "A company's on-premises application deployment cycle was 3-4 weeks. After migrating to the AWS Cloud, the company can deploy the application in 2-3 days.\nWhich benefit has this company experienced by moving to the AWS Cloud?",
     "options": "\n\tA. Elasticity\n\tB. Flexibility\n\tC. Agility\n\tD. Resilience",
-    "answer": "A",
-    "explanation": "Reference:",
+    "answer": "C",
+    "explanation": "Reference: https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
     "type": "Multiple Choice"
   },
   {
@@ -332,7 +332,7 @@
     "question": "Which of the following are features of network ACLs as they are used in the AWS Cloud? [Choose Two]",
     "options": "\n\tA. They are stateless.\n\tB. They are stateful.\n\tC. They evaluate all rules before allowing traffic.\n\tD. They process rules in order, starting with the lowest numbered rule, when deciding whether to allow traffic.\n\tE. They operate at the instance level.",
     "answer": "AD",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html",
     "type": "Multiple Answer"
   },
   {
@@ -347,8 +347,8 @@
     "id": "44",
     "question": "Which AWS service or feature can be used to create a private connection between an on-premises workload and an AWS Cloud workload?",
     "options": "\n\tA. Amazon Route 53\n\tB. Amazon Macie\n\tC. AWS Direct Connect\n\tD. AWS PrivateLink",
-    "answer": "D",
-    "explanation": "Reference: https://aws.amazon.com/privatelink/",
+    "answer": "C",
+    "explanation": "Reference: https://aws.amazon.com/directconnect/",
     "type": "Multiple Choice"
   },
   {
@@ -364,7 +364,7 @@
     "question": "A company wants to run production workloads on AWS. The company needs concierge service, a designated AWS technical account manager (TAM), and technical support that is available 24 hours a day, 7 days a week.\nWhich AWS Support plan will meet these requirements?",
     "options": "\n\tA. AWS Basic Support\n\tB. AWS Enterprise Support\n\tC. AWS Business Support\n\tD. AWS Developer Support",
     "answer": "B",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://aws.amazon.com/premiumsupport/plans/",
     "type": "Multiple Choice"
   },
   {
@@ -378,9 +378,9 @@
   {
     "id": "48",
     "question": "Which AWS services are managed database services? [Choose Two]",
-    "options": "\n\tA. Amazon Elastic Block Store (Amazon EBS)\n\tB. Amazon S3\n\tC. Amazon RDS\n\tD. Amazon Elastic File System (Amazon EFS)",
+    "options": "\n\tA. Amazon Elastic Block Store (Amazon EBS)\n\tB. Amazon S3\n\tC. Amazon RDS\n\tD. Amazon Elastic File System (Amazon EFS)\n\tE. Amazon DynamoDB",
     "answer": "CE",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://aws.amazon.com/getting-started/hands-on/move-to-managed/",
     "type": "Multiple Answer"
   },
   {
@@ -396,7 +396,7 @@
     "question": "A company recently deployed an Amazon RDS instance in its VPC. The company needs to implement a stateful firewall to limit traffic to the private corporate network.\nWhich AWS service or feature should the company use to limit network traffic directly to its RDS instance?",
     "options": "\n\tA. Network ACLs\n\tB. Security groups\n\tC. AWS WAF\n\tD. Amazon GuardDuty",
     "answer": "B",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.htm",
     "type": "Multiple Choice"
   },
   {
@@ -444,7 +444,7 @@
     "question": "A large enterprise with multiple VPCs in several AWS Regions around the world needs to connect and centrally manage network connectivity between its VPCs.\nWhich AWS service or feature meets these requirements?",
     "options": "\n\tA. AWS Direct Connect\n\tB. AWS Transit Gateway\n\tC. AWS Site-to-Site VPN\n\tD. VPC endpoints",
     "answer": "B",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://aws.amazon.com/transit-gateway/",
     "type": "Multiple Choice"
   },
   {
@@ -468,7 +468,7 @@
     "question": "A company is preparing to launch a new web store that is expected to receive high traffic for an upcoming event. The web store runs only on AWS, and the company has an AWS Enterprise Support plan.\nWhich AWS resource will provide guidance about how the company should scale its architecture and operational support during the event?",
     "options": "\n\tA. AWS Abuse team\n\tB. The designated AWS technical account manager (TAM)\n\tC. AWS infrastructure event management\n\tD. AWS Professional Services",
     "answer": "B",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://aws.amazon.com/blogs/mt/using-business-agility-to-unlock-business-value-while-migrating-to-aws/",
     "type": "Multiple Choice"
   },
   {
@@ -523,8 +523,8 @@
     "id": "66",
     "question": "A company wants to use the AWS Cloud to provide secure access to desktop applications that are running in a fully managed environment.\nWhich AWS service should the company use to meet this requirement?",
     "options": "\n\tA. Amazon S3\n\tB. Amazon AppStream 2.0\n\tC. AWS AppSync\n\tD. AWS Outposts",
-    "answer": "A",
-    "explanation": "Reference:",
+    "answer": "B",
+    "explanation": "Reference: https://aws.amazon.com/appstream2/",
     "type": "Multiple Choice"
   },
   {
@@ -547,8 +547,8 @@
     "id": "69",
     "question": "A company needs to install an application in a Docker container.\nWhich AWS service eliminates the need to provision and manage the container hosts?",
     "options": "\n\tA. AWS Fargate\n\tB. Amazon FSx for Windows File Server\n\tC. Amazon Elastic Container Service (Amazon ECS)\n\tD. Amazon EC2",
-    "answer": "C",
-    "explanation": "Reference:",
+    "answer": "A",
+    "explanation": "Reference: https://aws.amazon.com/fargate/",
     "type": "Multiple Choice"
   },
   {
@@ -564,7 +564,7 @@
     "question": "A company has a fleet of cargo ships. The cargo ships have sensors that collect data at sea, where there is intermittent or no internet connectivity. The company needs to collect, format, and process the data at sea and move the data to AWS later.\nWhich AWS service should the company use to meet these requirements?",
     "options": "\n\tA. AWS IoT Core\n\tB. Amazon Lightsail\n\tC. AWS Storage Gateway\n\tD. AWS Snowball Edge",
     "answer": "D",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://aws.amazon.com/snowball/",
     "type": "Multiple Choice"
   },
   {
@@ -692,7 +692,7 @@
     "question": "Which AWS service or tool can be used to capture information about inbound and outbound traffic in an Amazon VPC?",
     "options": "\n\tA. VPC Flow Logs\n\tB. Amazon Inspector\n\tC. VPC endpoint services\n\tD. NAT gateway",
     "answer": "A",
-    "explanation": "Reference:",
+    "explanation": "Reference: https://aws.amazon.com/blogs/aws/vpc-flow-logs-log-and-view-network-traffic-flows/",
     "type": "Multiple Choice"
   },
   {
@@ -747,8 +747,8 @@
     "id": "94",
     "question": "Which of the following is a recommended design principle for AWS Cloud architecture?",
     "options": "\n\tA. Design tightly coupled components.\n\tB. Build a single application component that can handle all the application functionality.\n\tC. Make large changes on fewer iterations to reduce chances of failure.\n\tD. Avoid monolithic architecture by segmenting workloads.",
-    "answer": "C",
-    "explanation": "Reference:",
+    "answer": "D",
+    "explanation": "Reference: https://aws.amazon.com/blogs/apn/the-6-pillars-of-the-aws-well-architected-framework/#:~:text=Design%20Principles,-There%20are%20seven&text=Implement%20a%20strong%20identity%20foundation,Automate%20security%20best%20practices",
     "type": "Multiple Choice"
   },
   {
